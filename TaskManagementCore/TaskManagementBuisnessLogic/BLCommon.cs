@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TaskManagementModel.Models;
-
-namespace TaskManagementBuisnessLogic
+﻿namespace TaskManagementBuisnessLogic
 {
 	public enum ResponseType
 	{
@@ -24,6 +17,10 @@ namespace TaskManagementBuisnessLogic
 	}
 	public class DataListMessage<T>
 	{
+		
+		public ResponseType Resp { get; set; }
+		public List<T> Data { get; set; }
+		public string Message { get; set; }
 		public DataListMessage(ResponseType resp, List<T> data, string _message)
 		{
 
@@ -32,13 +29,14 @@ namespace TaskManagementBuisnessLogic
 			Message = _message;
 		}
 
-		public string Message { get; set; }
-		public ResponseType Resp { get; set; }
-		public List<T> Data { get; set; }
+		
 	}
 
 	public class DataMessage<T>
 	{
+		public ResponseType Resp { get; set; }
+		public T Data { get; set; }
+		public string Message { get; set; }
 
 		public DataMessage(ResponseType resp, T data, string _message)
 		{
@@ -47,9 +45,8 @@ namespace TaskManagementBuisnessLogic
 			Data = data;
 			Message = _message;
 		}
-		public string Message { get; set; }
-		public ResponseType Resp { get; set; }
-		public T Data { get; set; }
+		
+		
 	}
 
 	public class BLCommon

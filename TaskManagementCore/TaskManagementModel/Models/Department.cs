@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TaskManagementModel.Models
 {
-	public class DepartmentModel
+	public class Department
 	{
 		[Key]
 		public int DepartmentModelId { get; set; }
@@ -17,6 +17,7 @@ namespace TaskManagementModel.Models
 		
 		public bool is_deleted { get; set; }
 		public string? created_by { get; set; }
+
 		public string? updated_by { get; set; }
 		public DateTime created_at { get; set; }
 		public DateTime updated_at { get; set; }
@@ -25,7 +26,7 @@ namespace TaskManagementModel.Models
 
 		
 		[ForeignKey("UserId")]
-		public Users User { get; set; }
+		public User User { get; set; }
 	}
 	
 }

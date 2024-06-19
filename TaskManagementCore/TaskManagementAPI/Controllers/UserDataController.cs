@@ -12,12 +12,12 @@ namespace TaskManagementAPI.Controllers
 	public class UserDataController : ControllerBase
 	{
 		[HttpGet]
-		public DataListMessage<Users> GetAll()
+		public DataListMessage<User> GetAll()
 		{
 			return BLUsers.Instance().GetAll();
 		}
 		[HttpGet]
-		public DataMessage<Users> GetById(int userId) {
+		public DataMessage<User> GetById(int userId) {
 			return BLUsers.Instance().GetById(userId);
 		}
 
@@ -25,16 +25,16 @@ namespace TaskManagementAPI.Controllers
 		public ActionResult<stringMessage> Delete(int id)
 		{
 			TaskManagementDbContext context = new TaskManagementDbContext();
-			return BLUsers.Instance().Delete(new Users { UserId = id });
+			return BLUsers.Instance().Delete(new User { id = id });
 		}
 		[HttpPost]
 
-		public DataMessage<int> Update( Users user)
+		public DataMessage<int> Update( User user)
 		{
 			return BLUsers.Instance().Update(user );
 		}
 		[HttpPost]
-		public DataMessage<int> Save( Users user)
+		public DataMessage<int> Save( User user)
 		{
 			return BLUsers.Instance().Save(user );
 		}

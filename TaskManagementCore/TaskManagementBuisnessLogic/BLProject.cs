@@ -23,63 +23,63 @@ namespace TaskManagementBuisnessLogic
 
 
 
-		public DataListMessage<ProjectModel> GetAll()
+		public DataListMessage<Project> GetAll()
 		{
 			try
 			{
 				using (TaskManagementDbContext _context = new TaskManagementDbContext())
 				{
-					var projectdata = _context.ProjectModel.ToList();
+					var projectdata = _context.Project.ToList();
 					if (projectdata != null)
 					{
-						return new DataListMessage<ProjectModel>(ResponseType.Success, projectdata, "Model Found");
+						return new DataListMessage<Project>(ResponseType.Success, projectdata, "Model Found");
 					}
 					else
 					{
-						return new DataListMessage<ProjectModel>(ResponseType.Exception, null, "No Model Found");
+						return new DataListMessage<Project>(ResponseType.Exception, null, "No Model Found");
 					}
 				}
 			}
 			catch (Exception ex)
 			{
-				return new DataListMessage<ProjectModel>(ResponseType.Exception, null, ex.Message.ToString());
+				return new DataListMessage<Project>(ResponseType.Exception, null, ex.Message.ToString());
 			}
 		}
 
-		public DataMessage<ProjectModel> GetById(int id)
+		public DataMessage<Project> GetById(int id)
 		{
 			try
 			{
 				using (TaskManagementDbContext _context = new TaskManagementDbContext())
 				{
-					var project = _context.ProjectModel.Where(p => p.projectid == id).FirstOrDefault();
+					var project = _context.Project.Where(p => p.projectid == id).FirstOrDefault();
 					if (project != null)
 					{
-						return new DataMessage<ProjectModel>(ResponseType.Success, project, "Id Details Found");
+						return new DataMessage<Project>(ResponseType.Success, project, "Id Details Found");
 
 					}
 					else
 					{
 
-						return new DataMessage<ProjectModel>(ResponseType.Exception, null, "No Details found");
+						return new DataMessage<Project>(ResponseType.Exception, null, "No Details found");
 
 					}
 				}
 			}
 			catch (Exception ex)
 			{
-				return new DataMessage<ProjectModel>(ResponseType.Exception, null, ex.Message.ToString());
+				return new DataMessage<Project>(ResponseType.Exception, null, ex.Message.ToString());
 
 			}
 		}
 
-		public stringMessage Delete(ProjectModel item)
+		public stringMessage Delete(Project item)
 		{
 			try
 			{
 				using (TaskManagementDbContext _context = new TaskManagementDbContext())
 				{
-					var projectdetail = _context.ProjectModel.Find(item.projectid);
+					var projectdetail = _context.Project.Find(item.projectid);
 					if (projectdetail == null)
 					{
 						return new stringMessage("cannot find the Entry", ResponseType.Exception);
@@ -101,13 +101,13 @@ namespace TaskManagementBuisnessLogic
 			}
 		}
 
-		public DataMessage<int> Update(ProjectModel newproject)
+		public DataMessage<int> Update(Project newproject)
 		{
 			try
 			{
 				using (TaskManagementDbContext _context = new TaskManagementDbContext())
 				{
-					var updatedproject = _context.ProjectModel.Where(c => c.projectid == newproject.projectid).FirstOrDefault();
+					var updatedproject = _context.Project.Where(c => c.projectid == newproject.projectid).FirstOrDefault();
 					if (updatedproject != null)
 					{
 						updatedproject.name = newproject.name;
@@ -140,7 +140,7 @@ namespace TaskManagementBuisnessLogic
 
 		}
 
-		public DataMessage<int> Save(ProjectModel newproject)
+		public DataMessage<int> Save(Project newproject)
 		{
 			try
 			{
@@ -148,7 +148,7 @@ namespace TaskManagementBuisnessLogic
 				{
 					if (newproject != null)
 					{
-						ProjectModel SavedData = new ProjectModel();
+						Project SavedData = new Project();
 						SavedData.name = newproject.name;
 						SavedData.description = newproject.description;
 
@@ -159,7 +159,7 @@ namespace TaskManagementBuisnessLogic
 						
 						SavedData.is_deleted = false;
 					
-						_context.ProjectModel.Add(newproject);
+						_context.Project.Add(newproject);
 
 						if (_context.SaveChanges() > 0)
 						{

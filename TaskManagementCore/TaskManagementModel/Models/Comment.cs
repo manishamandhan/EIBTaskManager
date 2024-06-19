@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TaskManagementModel.Models
 {
-	public class CommentModel
+	public class Comment
 	{
 		public int Id { get; set; }
 		public string created_by { get; set; }
@@ -20,6 +20,6 @@ namespace TaskManagementModel.Models
 
 
 		[ForeignKey("userid")]
-		public Users Users { get; set; }
+		public User Users { get; set; }
 	}
 }

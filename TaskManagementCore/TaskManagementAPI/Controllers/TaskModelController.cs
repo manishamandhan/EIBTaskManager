@@ -11,25 +11,25 @@ namespace TaskManagementAPI.Controllers
 	public class TaskModelController : Controller
 	{
 		[HttpGet]
-		public DataListMessage<TaskModel> GetAll()
+		public DataListMessage<TaskManagementModel.Models.Task> GetAll()
 		{
-			return BLTaskModel.Instance().GetAll();
+			return BLTask.Instance().GetAll();
 		}
 		[HttpPost]
-		public DataMessage<int> Update(TaskModel model)
+		public DataMessage<int> Update(TaskManagementModel.Models.Task model)
 		{
-			return BLTaskModel.Instance().Update(model);
+			return BLTask.Instance().Update(model);
 		}
 		[HttpPost]
-		public DataMessage<int> Save(TaskModel model)
+		public DataMessage<int> Save(TaskManagementModel.Models.Task model)
 		{
-			return BLTaskModel.Instance().Save(model);
+			return BLTask.Instance().Save(model);
 		}
 		[HttpDelete]
 		public ActionResult<stringMessage> Delete(int id)
 		{
 			TaskManagementDbContext context = new TaskManagementDbContext();
-			return BLTaskModel.Instance().Delete(new TaskModel { taskid = id });
+			return BLTask.Instance().Delete(new TaskManagementModel.Models.Task { taskid = id });
 		}
 
 	}

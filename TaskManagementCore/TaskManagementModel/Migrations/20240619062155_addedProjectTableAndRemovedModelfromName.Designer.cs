@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TaskManagementCore.Data;
 
@@ -11,9 +12,11 @@ using TaskManagementCore.Data;
 namespace TaskManagementModel.Migrations
 {
     [DbContext(typeof(TaskManagementDbContext))]
-    partial class TaskManagementDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240619062155_addedProjectTableAndRemovedModelfromName")]
+    partial class addedProjectTableAndRemovedModelfromName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -71,7 +74,7 @@ namespace TaskManagementModel.Migrations
                     b.ToTable("DSRDetails");
                 });
 
-            modelBuilder.Entity("TaskManagementModel.Models.Comment", b =>
+            modelBuilder.Entity("TaskManagementModel.Models.CommentModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -110,7 +113,7 @@ namespace TaskManagementModel.Migrations
                     b.ToTable("Comment");
                 });
 
-            modelBuilder.Entity("TaskManagementModel.Models.Department", b =>
+            modelBuilder.Entity("TaskManagementModel.Models.DepartmentModel", b =>
                 {
                     b.Property<int>("DepartmentModelId")
                         .ValueGeneratedOnAdd()
@@ -189,14 +192,15 @@ namespace TaskManagementModel.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("taskid"));
 
-                    b.Property<int>("assignee")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("created_at")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("created_by")
-                        .HasColumnType("int");
+                    b.Property<string>("created_by")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("description")
                         .IsRequired()
@@ -233,43 +237,27 @@ namespace TaskManagementModel.Migrations
                     b.Property<DateTime>("qa_start_date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("reportee")
-                        .HasColumnType("int");
-
-                    b.Property<string>("status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("updated_at")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("updated_by")
-                        .HasColumnType("int");
+                    b.Property<string>("updated_by")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("taskid");
 
-                    b.HasIndex("assignee");
-
-                    b.HasIndex("created_by");
-
-                    b.HasIndex("owner");
-
-                    b.HasIndex("projectid");
-
-                    b.HasIndex("reportee");
-
-                    b.HasIndex("updated_by");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Task");
                 });
 
-            modelBuilder.Entity("TaskManagementModel.Models.User", b =>
+            modelBuilder.Entity("TaskManagementModel.Models.Users", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"));
 
                     b.Property<string>("corresponding_address")
                         .HasColumnType("nvarchar(max)");
@@ -281,7 +269,7 @@ namespace TaskManagementModel.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("date_of_birth")
+                    b.Property<DateTime>("date_Of_birth")
                         .HasColumnType("datetime2");
 
                     b.Property<int?>("dept_id")
@@ -295,7 +283,6 @@ namespace TaskManagementModel.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("first_name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("hiring_date")
@@ -311,16 +298,16 @@ namespace TaskManagementModel.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("permanent_address")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("phone_no1")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("phone_no1")
+                        .HasColumnType("int");
 
-                    b.Property<string>("phone_no2")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("phone_no2")
+                        .HasColumnType("int");
 
                     b.Property<byte[]>("picture")
+                        .IsRequired()
                         .HasColumnType("varbinary(max)");
 
                     b.Property<DateTime>("updated_at")
@@ -330,28 +317,28 @@ namespace TaskManagementModel.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("id");
+                    b.HasKey("UserId");
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("TaskManagementModel.Models.Comment", b =>
+            modelBuilder.Entity("TaskManagementModel.Models.CommentModel", b =>
                 {
-                    b.HasOne("TaskManagementModel.Models.User", "Users")
+                    b.HasOne("TaskManagementModel.Models.Users", "Users")
                         .WithMany()
                         .HasForeignKey("userid")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Users");
                 });
 
-            modelBuilder.Entity("TaskManagementModel.Models.Department", b =>
+            modelBuilder.Entity("TaskManagementModel.Models.DepartmentModel", b =>
                 {
-                    b.HasOne("TaskManagementModel.Models.User", "User")
+                    b.HasOne("TaskManagementModel.Models.Users", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("User");
@@ -359,53 +346,13 @@ namespace TaskManagementModel.Migrations
 
             modelBuilder.Entity("TaskManagementModel.Models.Task", b =>
                 {
-                    b.HasOne("TaskManagementModel.Models.User", "assignee_fk")
+                    b.HasOne("TaskManagementModel.Models.Users", "Users")
                         .WithMany()
-                        .HasForeignKey("assignee")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TaskManagementModel.Models.User", "created_by_fk")
-                        .WithMany()
-                        .HasForeignKey("created_by")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("TaskManagementModel.Models.User", "owner_fk")
-                        .WithMany()
-                        .HasForeignKey("owner")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("TaskManagementModel.Models.User", "project_id_fk")
-                        .WithMany()
-                        .HasForeignKey("projectid")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("TaskManagementModel.Models.User", "reportee_fk")
-                        .WithMany()
-                        .HasForeignKey("reportee")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("TaskManagementModel.Models.User", "updated_by_fk")
-                        .WithMany()
-                        .HasForeignKey("updated_by")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.Navigation("assignee_fk");
-
-                    b.Navigation("created_by_fk");
-
-                    b.Navigation("owner_fk");
-
-                    b.Navigation("project_id_fk");
-
-                    b.Navigation("reportee_fk");
-
-                    b.Navigation("updated_by_fk");
+                    b.Navigation("Users");
                 });
 #pragma warning restore 612, 618
         }

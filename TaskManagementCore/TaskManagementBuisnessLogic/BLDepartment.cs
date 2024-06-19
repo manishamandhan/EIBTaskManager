@@ -24,7 +24,7 @@ namespace TaskManagementBuisnessLogic
 		public static BLDepartment Instance()
 		{ return _instance; }
 
-		public DataListMessage<DepartmentModel> GetAll()
+		public DataListMessage<Department> GetAll()
 		{
 			try
 			{
@@ -33,21 +33,21 @@ namespace TaskManagementBuisnessLogic
 					var deptdata = _context.Department.ToList();
 					if (deptdata != null)
 					{
-						return new DataListMessage<DepartmentModel>(ResponseType.Success, deptdata, "Model Found");
+						return new DataListMessage<Department>(ResponseType.Success, deptdata, "Model Found");
 					}
 					else
 					{
-						return new DataListMessage<DepartmentModel>(ResponseType.Exception, null, "No Model Found");
+						return new DataListMessage<Department>(ResponseType.Exception, null, "No Model Found");
 					}
 				}
 			}
 			catch (Exception ex)
 			{
-				return new DataListMessage<DepartmentModel>(ResponseType.Exception, null, ex.Message.ToString());
+				return new DataListMessage<Department>(ResponseType.Exception, null, ex.Message.ToString());
 			}
 		}
 
-		public DataMessage<DepartmentModel> GetById(int id)
+		public DataMessage<Department> GetById(int id)
 		{
 			try
 			{
@@ -56,25 +56,25 @@ namespace TaskManagementBuisnessLogic
 					var dept = _context.Department.Where(p => p.DepartmentModelId == id).FirstOrDefault();
 					if (dept != null)
 					{
-						return new DataMessage<DepartmentModel>(ResponseType.Success, dept, "Id Details Found");
+						return new DataMessage<Department>(ResponseType.Success, dept, "Id Details Found");
 
 					}
 					else
 					{
 
-						return new DataMessage<DepartmentModel>(ResponseType.Exception, null, "No Details found");
+						return new DataMessage<Department>(ResponseType.Exception, null, "No Details found");
 
 					}
 				}
 			}
 			catch (Exception ex)
 			{
-				return new DataMessage<DepartmentModel>(ResponseType.Exception, null, ex.Message.ToString());
+				return new DataMessage<Department>(ResponseType.Exception, null, ex.Message.ToString());
 
 			}
 		}
 
-		public stringMessage Delete(DepartmentModel item)
+		public stringMessage Delete(Department item)
 		{
 			try
 			{
@@ -102,7 +102,7 @@ namespace TaskManagementBuisnessLogic
 			}
 		}
 
-		public DataMessage<int> Update(DepartmentModel newdata)
+		public DataMessage<int> Update(Department newdata)
 		{
 			try
 			{
@@ -140,7 +140,7 @@ namespace TaskManagementBuisnessLogic
 
 		}
 
-		public DataMessage<int> Save(DepartmentModel newdata)
+		public DataMessage<int> Save(Department newdata)
 		{
 			try
 			{
@@ -148,7 +148,7 @@ namespace TaskManagementBuisnessLogic
 				{
 					if (newdata != null)
 					{
-						DepartmentModel SavedData = new DepartmentModel();
+						Department SavedData = new Department();
 						SavedData.DepartmentName = newdata.DepartmentName;
 						SavedData.UserId = newdata.UserId;
 

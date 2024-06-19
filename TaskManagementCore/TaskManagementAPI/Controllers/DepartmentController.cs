@@ -14,12 +14,12 @@ namespace TaskManagementAPI.Controllers
 	public class DepartmentController : ControllerBase
 	{
 		[HttpGet]
-		public DataListMessage<DepartmentModel> GetAll()
+		public DataListMessage<Department> GetAll()
 		{
 			return BLDepartment.Instance().GetAll();
 		}
 		[HttpGet]
-		public DataMessage<DepartmentModel> GetById(int deptid)
+		public DataMessage<Department> GetById(int deptid)
 		{
 			return BLDepartment.Instance().GetById(deptid);
 		}
@@ -28,16 +28,16 @@ namespace TaskManagementAPI.Controllers
 		public ActionResult<stringMessage> Delete(int id)
 		{
 			TaskManagementDbContext context = new TaskManagementDbContext();
-			return BLDepartment.Instance().Delete(new DepartmentModel { DepartmentModelId = id });
+			return BLDepartment.Instance().Delete(new Department { DepartmentModelId = id });
 		}
 		[HttpPost]
 
-		public DataMessage<int> Update(DepartmentModel department)
+		public DataMessage<int> Update(Department department)
 		{
 			return BLDepartment.Instance().Update(department);
 		}
 		[HttpPost]
-		public DataMessage<int> Save(DepartmentModel department)
+		public DataMessage<int> Save(Department department)
 		{
 			return BLDepartment.Instance().Save(department);
 		}

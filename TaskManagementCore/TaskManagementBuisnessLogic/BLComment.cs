@@ -25,7 +25,7 @@ namespace TaskManagementBuisnessLogic
 
 
 
-		public DataListMessage<CommentModel> GetAll()
+		public DataListMessage<Comment> GetAll()
 		{
 			try
 			{
@@ -34,21 +34,21 @@ namespace TaskManagementBuisnessLogic
 					var commentdata = _context.Comment.ToList();
 					if (commentdata != null)
 					{
-						return new DataListMessage<CommentModel>(ResponseType.Success, commentdata, "Model Found");
+						return new DataListMessage<Comment>(ResponseType.Success, commentdata, "Model Found");
 					}
 					else
 					{
-						return new DataListMessage<CommentModel>(ResponseType.Exception, null, "No Model Found");
+						return new DataListMessage<Comment>(ResponseType.Exception, null, "No Model Found");
 					}
 				}
 			}
 			catch (Exception ex)
 			{
-				return new DataListMessage<CommentModel>(ResponseType.Exception, null, ex.Message.ToString());
+				return new DataListMessage<Comment>(ResponseType.Exception, null, ex.Message.ToString());
 			}
 		}
 
-		public DataMessage<CommentModel> GetById(int id)
+		public DataMessage<Comment> GetById(int id)
 		{
 			try
 			{
@@ -57,31 +57,31 @@ namespace TaskManagementBuisnessLogic
 					var comment = _context.Comment.Where(p => p.Id == id).FirstOrDefault();
 					if (comment != null)
 					{
-						return new DataMessage<CommentModel>(ResponseType.Success, comment, "Id Details Found");
+						return new DataMessage<Comment>(ResponseType.Success, comment, "Id Details Found");
 
 					}
 					else
 					{
 
-						return new DataMessage<CommentModel>(ResponseType.Exception, null, "No Details found");
+						return new DataMessage<Comment>(ResponseType.Exception, null, "No Details found");
 
 					}
 				}
 			}
 			catch (Exception ex)
 			{
-				return new DataMessage<CommentModel>(ResponseType.Exception, null, ex.Message.ToString());
+				return new DataMessage<Comment>(ResponseType.Exception, null, ex.Message.ToString());
 
 			}
 		}
 
-		public stringMessage Delete(CommentModel item)
+		public stringMessage Delete(Comment item)
 		{
 			try
 			{
 				using (TaskManagementDbContext _context = new TaskManagementDbContext())
 				{
-					var commentdetail = _context.ProjectModel.Find(item.Id);
+					var commentdetail = _context.Project.Find(item.Id);
 					if (commentdetail == null)
 					{
 						return new stringMessage("cannot find the Entry", ResponseType.Exception);
@@ -103,7 +103,7 @@ namespace TaskManagementBuisnessLogic
 			}
 		}
 
-		public DataMessage<int> Update(CommentModel newcomment)
+		public DataMessage<int> Update(Comment newcomment)
 		{
 			try
 			{
@@ -142,7 +142,7 @@ namespace TaskManagementBuisnessLogic
 
 		}
 
-		public DataMessage<int> Save(CommentModel newcomment)
+		public DataMessage<int> Save(Comment newcomment)
 		{
 			try
 			{
@@ -150,7 +150,7 @@ namespace TaskManagementBuisnessLogic
 				{
 					if (newcomment != null)
 					{
-						CommentModel SavedData = new CommentModel();
+						Comment SavedData = new Comment();
 						SavedData.userid = newcomment.userid;
 						SavedData.values = newcomment.values;
 

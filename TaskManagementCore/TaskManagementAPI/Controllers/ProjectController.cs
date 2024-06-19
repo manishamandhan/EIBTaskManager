@@ -12,12 +12,12 @@ namespace TaskManagementAPI.Controllers
 	public class ProjectController : ControllerBase
 	{
 		[HttpGet]
-		public DataListMessage<ProjectModel> GetAll()
+		public DataListMessage<Project> GetAll()
 		{
 			return BLProject.Instance().GetAll();
 		}
 		[HttpGet]
-		public DataMessage<ProjectModel> GetById(int projectid)
+		public DataMessage<Project> GetById(int projectid)
 		{
 			return BLProject.Instance().GetById(projectid);
 		}
@@ -26,16 +26,16 @@ namespace TaskManagementAPI.Controllers
 		public ActionResult<stringMessage> Delete(int id)
 		{
 			TaskManagementDbContext context = new TaskManagementDbContext();
-			return BLProject.Instance().Delete(new ProjectModel { projectid = id });
+			return BLProject.Instance().Delete(new Project { projectid = id });
 		}
 		[HttpPost]
 
-		public DataMessage<int> Update(ProjectModel project)
+		public DataMessage<int> Update(Project project)
 		{
 			return BLProject.Instance().Update(project);
 		}
 		[HttpPost]
-		public DataMessage<int> Save(ProjectModel project)
+		public DataMessage<int> Save(Project project)
 		{
 			return BLProject.Instance().Save(project);
 		}

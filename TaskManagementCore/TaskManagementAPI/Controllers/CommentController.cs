@@ -14,12 +14,12 @@ namespace TaskManagementAPI.Controllers
 	public class CommentController : ControllerBase
 	{
 		[HttpGet]
-		public DataListMessage<CommentModel> GetAll()
+		public DataListMessage<Comment> GetAll()
 		{
 			return BLComment.Instance().GetAll();
 		}
 		[HttpGet]
-		public DataMessage<CommentModel> GetById(int Id)
+		public DataMessage<Comment> GetById(int Id)
 		{
 			return BLComment.Instance().GetById(Id);
 		}
@@ -28,16 +28,16 @@ namespace TaskManagementAPI.Controllers
 		public ActionResult<stringMessage> Delete(int id)
 		{
 			TaskManagementDbContext context = new TaskManagementDbContext();
-			return BLComment.Instance().Delete(new CommentModel { Id = id });
+			return BLComment.Instance().Delete(new Comment { Id = id });
 		}
 		[HttpPost]
 
-		public DataMessage<int> Update(CommentModel comment)
+		public DataMessage<int> Update(Comment comment)
 		{
 			return BLComment.Instance().Update(comment);
 		}
 		[HttpPost]
-		public DataMessage<int> Save(CommentModel comment)
+		public DataMessage<int> Save(Comment comment)
 		{
 			return BLComment.Instance().Save(comment);
 		}

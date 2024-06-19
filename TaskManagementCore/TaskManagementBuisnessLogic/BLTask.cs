@@ -10,46 +10,46 @@ using static TaskManagementBuisnessLogic.BLCommon;
 
 namespace TaskManagementBuisnessLogic
 {
-	public sealed class BLTaskModel
+	public sealed class BLTask
 	{
-		private static readonly BLTaskModel _instance;
-		static BLTaskModel()
+		private static readonly BLTask _instance;
+		static BLTask()
 		{
-			_instance = new BLTaskModel();
+			_instance = new BLTask();
 		}
-		public static BLTaskModel Instance() { return _instance; }
+		public static BLTask Instance() { return _instance; }
 
 
-		public DataListMessage<TaskModel> GetAll()
+		public DataListMessage<TaskManagementModel.Models.Task> GetAll()
 		{
 			try
 			{
 				using (TaskManagementDbContext _context = new TaskManagementDbContext())
 				{
-					var taskmodel = _context.TaskModel.ToList();
+					var taskmodel = _context.Task.ToList();
 					if (taskmodel != null)
 					{
-						return new DataListMessage<TaskModel>(ResponseType.Success, taskmodel, "Data Found");
+						return new DataListMessage<TaskManagementModel.Models.Task>(ResponseType.Success, taskmodel, "Data Found");
 					}
 					else
 					{
-						return new DataListMessage<TaskModel>(ResponseType.Exception, null, "No Data Found");
+						return new DataListMessage<TaskManagementModel.Models.Task>(ResponseType.Exception, null, "No Data Found");
 					}
 				}
 
 			}
 			catch (Exception ex)
 			{
-				return new DataListMessage<TaskModel>(ResponseType.Exception, null, ex.Message.ToString());
+				return new DataListMessage<TaskManagementModel.Models.Task>(ResponseType.Exception, null, ex.Message.ToString());
 			}
 		}
-		public DataMessage<int> Update(TaskModel newtask)
+		public DataMessage<int> Update(TaskManagementModel.Models.Task newtask)
 		{
 			try
 			{
 				using (TaskManagementDbContext _context = new TaskManagementDbContext())
 				{
-					var updatedtask = _context.TaskModel.Where(c => c.taskid == newtask.taskid).FirstOrDefault();
+					var updatedtask = _context.Task.Where(c => c.taskid == newtask.taskid).FirstOrDefault();
 					if (updatedtask != null)
 					{
 						updatedtask.name = newtask.name;
@@ -70,7 +70,7 @@ namespace TaskManagementBuisnessLogic
 
 						if (_context.SaveChanges() > 0)
 						{
-							return new DataMessage<int>(ResponseType.Success, updatedtask.UserId, "Data Saved");
+							return new DataMessage<int>(ResponseType.Success, updatedtask.taskid, "Data Saved");
 						}
 
 					}
@@ -83,13 +83,13 @@ namespace TaskManagementBuisnessLogic
 
 			}
 		}
-		public DataMessage<int> Save (TaskModel newtask)
+		public DataMessage<int> Save (TaskManagementModel.Models.Task newtask)
 		{
 			try
 			{
 				using(TaskManagementDbContext _context = new TaskManagementDbContext())
 				{
-					var savedtask = _context.TaskModel.Where(c => c.taskid == newtask.taskid).FirstOrDefault();
+					var savedtask = _context.Task.Where(c => c.taskid == newtask.taskid).FirstOrDefault();
                     if ( savedtask != null)
                     {
 						savedtask.name = newtask.name;
@@ -107,12 +107,12 @@ namespace TaskManagementBuisnessLogic
 						savedtask.qa_complete_date = newtask.qa_complete_date;
 						savedtask.qa_estimate_date = newtask.qa_estimate_date;
 						savedtask.owner = newtask.owner;
-						_context.TaskModel.Add(newtask);
+						_context.Task.Add(newtask);
 
 						if (_context.SaveChanges() > 0)
 						{
 
-							return new DataMessage<int>(ResponseType.Success, savedtask.UserId, "Data Saved");
+							return new DataMessage<int>(ResponseType.Success, savedtask.taskid, "Data Saved");
 
 						}
 
@@ -134,13 +134,13 @@ namespace TaskManagementBuisnessLogic
 
 
 		}
-		public stringMessage Delete(TaskModel item)
+		public stringMessage Delete(TaskManagementModel.Models.Task item)
 		{
 			try
 			{
 				using (TaskManagementDbContext _context = new TaskManagementDbContext())
 				{
-					var taskdetails = _context.TaskModel.Find(item.taskid);
+					var taskdetails = _context.Task.Find(item.taskid);
 					if(taskdetails == null)
 					{
 						return new stringMessage("cannot find the Entry", ResponseType.Exception);
