@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
 using TaskManagementCore.Data;
 using TaskManagementModel.Models;
 using static TaskManagementBuisnessLogic.BLCommon;
@@ -26,7 +21,7 @@ namespace TaskManagementBuisnessLogic
 			{
 				using (TaskManagementDbContext _context = new TaskManagementDbContext())
 				{
-					var taskmodel = _context.Task.ToList();
+					var taskmodel = _context.Task.Include(p => p.Owner).Include(p =>p.Project).ToList();
 					if (taskmodel != null)
 					{
 						return new DataListMessage<TaskManagementModel.Models.Task>(ResponseType.Success, taskmodel, "Data Found");
@@ -43,34 +38,64 @@ namespace TaskManagementBuisnessLogic
 				return new DataListMessage<TaskManagementModel.Models.Task>(ResponseType.Exception, null, ex.Message.ToString());
 			}
 		}
+		public DataMessage<TaskManagementModel.Models.Task> GetById(int TaskId)
+		{
+			try
+			{
+				using (TaskManagementDbContext _context = new TaskManagementDbContext())
+				{
+					var taskid = _context.Task.Include(p => p.Owner).Include(p => p.Project).Where(p => p.TaskId == TaskId).FirstOrDefault();
+					if (taskid != null)
+					{
+						return new DataMessage<TaskManagementModel.Models.Task>(ResponseType.Success, taskid, "Id Details Found");
+
+					}
+					else
+					{
+
+						return new DataMessage<TaskManagementModel.Models.Task>(ResponseType.Exception, null, "No Details found");
+
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				return new DataMessage<TaskManagementModel.Models.Task>(ResponseType.Exception, null, ex.Message.ToString());
+
+			}
+		}
 		public DataMessage<int> Update(TaskManagementModel.Models.Task newtask)
 		{
 			try
 			{
 				using (TaskManagementDbContext _context = new TaskManagementDbContext())
 				{
-					var updatedtask = _context.Task.Where(c => c.taskid == newtask.taskid).FirstOrDefault();
+					var updatedtask = _context.Task.Where(c => c.TaskId == newtask.TaskId).FirstOrDefault();
 					if (updatedtask != null)
 					{
-						updatedtask.name = newtask.name;
-						updatedtask.description = newtask.description;
-						updatedtask.is_deleted = newtask.is_deleted;
-						updatedtask.created_by = newtask.created_by;
-						updatedtask.updated_by = newtask.updated_by;
-						updatedtask.created_by = newtask.created_by;
-						updatedtask.created_at = newtask.created_at;
-						updatedtask.updated_at = newtask.updated_at;
-						updatedtask.dev_start_date = newtask.dev_start_date;
-						updatedtask.dev_complete_date = newtask.dev_complete_date;
-						updatedtask.dev_estimate_date = newtask.dev_estimate_date;
-						updatedtask.qa_start_date = newtask.qa_start_date;
-						updatedtask.qa_complete_date = newtask.qa_complete_date;
-						updatedtask.qa_estimate_date = newtask.qa_estimate_date;
-						updatedtask.owner = newtask.owner;
+						updatedtask.Name = newtask.Name;
+						updatedtask.Description = newtask.Description;
+						updatedtask.IsDeleted = newtask.IsDeleted;
+						updatedtask.CreatedBy = newtask.CreatedBy;
+						updatedtask.ModifiedBy = newtask.ModifiedBy;
+						updatedtask.CreatedBy = newtask.CreatedBy;
+						updatedtask.DateCreated = newtask.DateCreated;
+						updatedtask.DateModified = newtask.DateModified;
+						updatedtask.DevStartDate = newtask.DevStartDate;
+						updatedtask.DevCompleteDate = newtask.DevCompleteDate;
+						updatedtask.DevEstimateDate = newtask.DevEstimateDate;
+						updatedtask.QaStartDate = newtask.QaStartDate;
+						updatedtask.QaCompleteDate = newtask.QaCompleteDate;
+						updatedtask.QaEstimateDate = newtask.QaEstimateDate;
+						updatedtask.OwnerId = newtask.OwnerId;
+						updatedtask.ReporteeId = newtask.ReporteeId;
+						updatedtask.AssigneeId = newtask.AssigneeId;
+						updatedtask.ProjectId = newtask.ProjectId;
+						updatedtask.Status = newtask.Status;
 
 						if (_context.SaveChanges() > 0)
 						{
-							return new DataMessage<int>(ResponseType.Success, updatedtask.taskid, "Data Saved");
+							return new DataMessage<int>(ResponseType.Success, updatedtask.TaskId, "Data Saved");
 						}
 
 					}
@@ -89,30 +114,36 @@ namespace TaskManagementBuisnessLogic
 			{
 				using(TaskManagementDbContext _context = new TaskManagementDbContext())
 				{
-					var savedtask = _context.Task.Where(c => c.taskid == newtask.taskid).FirstOrDefault();
-                    if ( savedtask != null)
+					
+                    if (newtask != null)
                     {
-						savedtask.name = newtask.name;
-						savedtask.description = newtask.description;
-						savedtask.is_deleted = newtask.is_deleted;
-						savedtask.created_by = newtask.created_by;
-						savedtask.updated_by = newtask.updated_by;
-						savedtask.created_by = newtask.created_by;
-						savedtask.created_at = newtask.created_at;
-						savedtask.updated_at = newtask.updated_at;
-						savedtask.dev_start_date = newtask.dev_start_date;
-						savedtask.dev_complete_date = newtask.dev_complete_date;
-						savedtask.dev_estimate_date = newtask.dev_estimate_date;
-						savedtask.qa_start_date = newtask.qa_start_date;
-						savedtask.qa_complete_date = newtask.qa_complete_date;
-						savedtask.qa_estimate_date = newtask.qa_estimate_date;
-						savedtask.owner = newtask.owner;
+						TaskManagementModel.Models.Task savedtask = new TaskManagementModel.Models.Task();
+						newtask.Status = TaskStatus.ToDo.ToString();
+						savedtask.Name = newtask.Name;
+						savedtask.Description = newtask.Description;
+						savedtask.Status = newtask.Status;
+						savedtask.IsDeleted = newtask.IsDeleted;
+						savedtask.CreatedBy = newtask.CreatedBy;
+						savedtask.ModifiedBy = newtask.ModifiedBy;
+						
+						savedtask.DateCreated = newtask.DateCreated;
+						savedtask.DateModified = newtask.DateModified;
+						savedtask.DevStartDate = newtask.DevStartDate;
+						savedtask.DevCompleteDate = newtask.DevCompleteDate;
+						savedtask.DevEstimateDate = newtask.DevEstimateDate;
+						savedtask.QaStartDate = newtask.QaStartDate;
+						savedtask.QaCompleteDate = newtask.QaCompleteDate;
+						savedtask.QaEstimateDate = newtask.QaEstimateDate;
+						savedtask.OwnerId = newtask.OwnerId;
+						savedtask.ReporteeId = newtask.ReporteeId;
+						savedtask.AssigneeId = newtask.AssigneeId;
+						savedtask.ProjectId = newtask.ProjectId;
 						_context.Task.Add(newtask);
 
 						if (_context.SaveChanges() > 0)
 						{
 
-							return new DataMessage<int>(ResponseType.Success, savedtask.taskid, "Data Saved");
+							return new DataMessage<int>(ResponseType.Success, savedtask.TaskId, "Data Saved");
 
 						}
 
@@ -140,7 +171,7 @@ namespace TaskManagementBuisnessLogic
 			{
 				using (TaskManagementDbContext _context = new TaskManagementDbContext())
 				{
-					var taskdetails = _context.Task.Find(item.taskid);
+					var taskdetails = _context.Task.Find(item.TaskId);
 					if(taskdetails == null)
 					{
 						return new stringMessage("cannot find the Entry", ResponseType.Exception);
@@ -149,7 +180,7 @@ namespace TaskManagementBuisnessLogic
 					}
 					else
 					{
-						taskdetails.is_deleted = !taskdetails.is_deleted;
+						taskdetails.IsDeleted = !taskdetails.IsDeleted;
 						_context.SaveChanges();
 						return new stringMessage("", ResponseType.Success);
 					}

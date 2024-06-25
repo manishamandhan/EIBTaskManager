@@ -8,50 +8,50 @@ namespace TaskManagementModel.Models
 	public class Task
 	{
 		[Key]
-		public int taskid { get; set; }
-		public string name { get; set; }
-		public string description { get; set; }
-		public string status { get; set; }
-		public bool is_deleted { get; set; }
-		public int created_by { get; set; }
+		public int TaskId { get; set; }
+		public string Name { get; set; }
+		public string Description { get; set; }
+		public string Status { get; set; }
+		public bool IsDeleted { get; set; } = false;
+		public int CreatedBy { get; set; }
 
-		[ForeignKey("created_by")]
+		[ForeignKey("CreatedBy")]
 		//[DeleteBehavior(DeleteBehavior.Cascade)]
-		public virtual User created_by_fk { get; set; }
+		public virtual User? CreatedByUser { get; set; }
 		
-		public int updated_by { get; set; }
-		[ForeignKey("updated_by")]
+		public int ModifiedBy { get; set; }
+		[ForeignKey("ModifiedBy")]
 		//[DeleteBehavior(DeleteBehavior.Cascade)]
-		public virtual User updated_by_fk { get; set; }
+		public virtual User? ModifiedByUser { get; set; }
 
-		public DateTime created_at { get; set; }
-		public DateTime updated_at { get; set; }
+		public DateTime DateCreated { get; set; }
+		public DateTime DateModified { get; set; }
 
-		public DateTime dev_start_date { get; set; }
-		public DateTime dev_complete_date { get; set; }
-		public DateTime dev_estimate_date { get; set; }
-		public DateTime qa_start_date { get; set; }
-		public DateTime qa_complete_date { get;set; }
-		public DateTime qa_estimate_date { get; set; }
-		public int owner {  get; set; }
-		[ForeignKey("owner")]
+		public DateTime DevStartDate { get; set; }
+		public DateTime DevCompleteDate { get; set; }
+		public DateTime DevEstimateDate { get; set; }
+		public DateTime QaStartDate { get; set; }
+		public DateTime QaCompleteDate { get;set; }
+		public DateTime QaEstimateDate { get; set; }
+		public int OwnerId {  get; set; }
+		[ForeignKey("OwnerId")]
 		//[DeleteBehavior(DeleteBehavior.Cascade)]
-		public virtual User owner_fk { get; set; }
+		public virtual User? Owner { get; set; }
 
-		public int reportee { get; set; }
-		[ForeignKey("reportee")]
+		public int ReporteeId { get; set; }
+		[ForeignKey("ReporteeId")]
 		//[DeleteBehavior(DeleteBehavior.Cascade)]
-		public virtual User reportee_fk { get; set; }
+		public virtual User? Reportee { get; set; }
 
-		public int assignee { get; set; }
-		[ForeignKey("assignee")]
+		public int AssigneeId { get; set; }
+		[ForeignKey("AssigneeId")]
 		//[DeleteBehavior(DeleteBehavior.Cascade)]
-		public virtual User assignee_fk { get; set; }
+		public virtual User? Assignee{ get; set; }
 
-		public int projectid { get; set; }
-		[ForeignKey("projectid")]
+		public int ProjectId { get; set; }
+		[ForeignKey("ProjectId")]
 		//[DeleteBehavior(DeleteBehavior.Cascade)]
-		public virtual User project_id_fk { get; set; }
+		public virtual Project? Project { get; set; }
 
 		
 

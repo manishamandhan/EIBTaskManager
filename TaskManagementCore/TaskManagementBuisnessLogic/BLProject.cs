@@ -52,7 +52,7 @@ namespace TaskManagementBuisnessLogic
 			{
 				using (TaskManagementDbContext _context = new TaskManagementDbContext())
 				{
-					var project = _context.Project.Where(p => p.projectid == id).FirstOrDefault();
+					var project = _context.Project.Where(p => p.ProjectId == id).FirstOrDefault();
 					if (project != null)
 					{
 						return new DataMessage<Project>(ResponseType.Success, project, "Id Details Found");
@@ -79,7 +79,7 @@ namespace TaskManagementBuisnessLogic
 			{
 				using (TaskManagementDbContext _context = new TaskManagementDbContext())
 				{
-					var projectdetail = _context.Project.Find(item.projectid);
+					var projectdetail = _context.Project.Find(item.ProjectId);
 					if (projectdetail == null)
 					{
 						return new stringMessage("cannot find the Entry", ResponseType.Exception);
@@ -87,7 +87,7 @@ namespace TaskManagementBuisnessLogic
 					}
 					else
 					{
-						projectdetail.is_deleted = !projectdetail.is_deleted;
+						projectdetail.IsDeleted = !projectdetail.IsDeleted;
 						_context.SaveChanges();
 						return new stringMessage("", ResponseType.Success);
 					}
@@ -107,22 +107,21 @@ namespace TaskManagementBuisnessLogic
 			{
 				using (TaskManagementDbContext _context = new TaskManagementDbContext())
 				{
-					var updatedproject = _context.Project.Where(c => c.projectid == newproject.projectid).FirstOrDefault();
+					var updatedproject = _context.Project.Where(c => c.ProjectId == newproject.ProjectId).FirstOrDefault();
 					if (updatedproject != null)
 					{
-						updatedproject.name = newproject.name;
-						updatedproject.description = newproject.description;
-
-						updatedproject.is_deleted = newproject.is_deleted;
-						updatedproject.created_by = newproject.created_by;
-						updatedproject.updated_by = newproject.updated_by;
-						updatedproject.created_at = newproject.created_at;
-						updatedproject.updated_at = newproject.updated_at;
+						updatedproject.Name = newproject.Name;
+						updatedproject.Description = newproject.Description;
+						updatedproject.IsDeleted = newproject.IsDeleted;
+						updatedproject.CreatedBy = newproject.CreatedBy;
+						updatedproject.ModifiedBy = newproject.ModifiedBy;
+						updatedproject.DateCreated = newproject.DateCreated;
+						updatedproject.DateModified = newproject.DateModified;
 						
 
 						if (_context.SaveChanges() > 0)
 						{
-							return new DataMessage<int>(ResponseType.Success, updatedproject.projectid, "Data Saved");
+							return new DataMessage<int>(ResponseType.Success, updatedproject.ProjectId, "Data Saved");
 
 						}
 
@@ -149,22 +148,20 @@ namespace TaskManagementBuisnessLogic
 					if (newproject != null)
 					{
 						Project SavedData = new Project();
-						SavedData.name = newproject.name;
-						SavedData.description = newproject.description;
-
-						SavedData.created_by = newproject.created_by;
-						SavedData.updated_by = newproject.updated_by;
-						SavedData.created_at = newproject.created_at;
-						SavedData.updated_at = newproject.updated_at;
-						
-						SavedData.is_deleted = false;
+						SavedData.Name = newproject.Name;
+						SavedData.Description = newproject.Description;
+						SavedData.CreatedBy = newproject.CreatedBy;
+						SavedData.ModifiedBy = newproject.ModifiedBy;
+						SavedData.DateCreated = newproject.DateCreated;
+						SavedData.DateModified = newproject.DateModified;
+						SavedData.IsDeleted = false;
 					
 						_context.Project.Add(newproject);
 
 						if (_context.SaveChanges() > 0)
 						{
 
-							return new DataMessage<int>(ResponseType.Success, SavedData.projectid, "Data Saved");
+							return new DataMessage<int>(ResponseType.Success, SavedData.ProjectId, "Data Saved");
 
 						}
 

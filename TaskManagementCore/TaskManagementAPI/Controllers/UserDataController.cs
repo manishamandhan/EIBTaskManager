@@ -25,16 +25,16 @@ namespace TaskManagementAPI.Controllers
 		public ActionResult<stringMessage> Delete(int id)
 		{
 			TaskManagementDbContext context = new TaskManagementDbContext();
-			return BLUsers.Instance().Delete(new User { id = id });
+			return BLUsers.Instance().Delete(new User { UserId = id });
 		}
-		[HttpPost]
+		[HttpPut]
 
-		public DataMessage<int> Update( User user)
+		public DataMessage<int> Update(User user)
 		{
 			return BLUsers.Instance().Update(user );
 		}
 		[HttpPost]
-		public DataMessage<int> Save( User user)
+		public DataMessage<int> Save(User user)
 		{
 			return BLUsers.Instance().Save(user );
 		}

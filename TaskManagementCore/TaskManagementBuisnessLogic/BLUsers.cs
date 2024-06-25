@@ -52,7 +52,7 @@ namespace TaskManagementBuisnessLogic
 			{
 				using (TaskManagementDbContext _context = new TaskManagementDbContext())
 				{
-					var userid = _context.User.Where(p => p.id == userId).FirstOrDefault();
+					var userid = _context.User.Where(p => p.UserId == userId).FirstOrDefault();
 					if (userid != null)
 					{
 						return new DataMessage<User>(ResponseType.Success, userid, "Id Details Found");
@@ -79,7 +79,7 @@ namespace TaskManagementBuisnessLogic
 			{
 				using (TaskManagementDbContext _context = new TaskManagementDbContext())
 				{
-					var userdetail = _context.User.Find(item.id);
+					var userdetail = _context.User.Find(item.UserId);
 					if (userdetail == null)
 					{
 						return new stringMessage("cannot find the Entry", ResponseType.Exception);
@@ -87,7 +87,7 @@ namespace TaskManagementBuisnessLogic
 					}
 					else
 					{
-						userdetail.is_deleted = !userdetail.is_deleted;
+						userdetail.IsDeleted = !userdetail.IsDeleted;
 						_context.SaveChanges();
 						return new stringMessage("", ResponseType.Success);
 					}
@@ -107,31 +107,33 @@ namespace TaskManagementBuisnessLogic
 			{
 				using (TaskManagementDbContext _context = new TaskManagementDbContext())
 				{
-					var updateduser = _context.User.Where(c => c.id == newuser.id).FirstOrDefault();
+					var updateduser = _context.User.Where(c => c.UserId == newuser.UserId).FirstOrDefault();
 					if (updateduser != null)
 					{
-						updateduser.first_name = newuser.first_name;
-						updateduser.last_name = newuser.last_name;
-						updateduser.email = newuser.email;
-						updateduser.phone_no1 = newuser.phone_no1;
-						updateduser.phone_no2 = newuser.phone_no2;
-						updateduser.dept_id = newuser.dept_id;
-						updateduser.corresponding_address = newuser.corresponding_address;
-						updateduser.date_of_birth = newuser.date_of_birth;
-						updateduser.designation = newuser.designation;
-						updateduser.hiring_date = newuser.hiring_date;
-						updateduser.permanent_address = newuser.permanent_address;
-						updateduser.created_by = newuser.created_by;
-						updateduser.updated_by = newuser.updated_by;
-						updateduser.created_at = newuser.created_at;
-						updateduser.updated_at = newuser.updated_at;
+						updateduser.Picture = newuser.Picture;
+						updateduser.FirstName = newuser.FirstName;
+						updateduser.LastName = newuser.LastName;
+						updateduser.Email = newuser.Email;
+						updateduser.Password = newuser.Password;
+						updateduser.PhoneNo1 = newuser.PhoneNo1;
+						updateduser.PhoneNo2 = newuser.PhoneNo2;
+						updateduser.DeptId = newuser.DeptId;
+						updateduser.CorrespondingAddress = newuser.CorrespondingAddress;
+						updateduser.DateOfBirth = newuser.DateOfBirth;
+						updateduser.Designation = newuser.Designation;
+						updateduser.HiringDate = newuser.HiringDate;
+						updateduser.PermanentAddress = newuser.PermanentAddress;
+						updateduser.CreatedBy = newuser.CreatedBy;
+						updateduser.ModifiedBy = newuser.ModifiedBy;
+						updateduser.DateCreated = newuser.DateCreated;
+						updateduser.DateModified = newuser.DateModified;
 
-						updateduser.is_deleted = false;
+						updateduser.IsDeleted = false;
 						
 
 						if (_context.SaveChanges() > 0)
 						{
-							return new DataMessage<int>(ResponseType.Success, updateduser.id, "Data Saved");
+							return new DataMessage<int>(ResponseType.Success, updateduser.UserId, "Data Saved");
 
 						}
 
@@ -158,27 +160,29 @@ namespace TaskManagementBuisnessLogic
 					if (newuser != null)
 					{
 						User SavedData = new User();
-						SavedData.first_name = newuser.first_name;
-						SavedData.last_name = newuser.last_name;
-						SavedData.email = newuser.email;
-						SavedData.phone_no1 = newuser.phone_no1;
-						SavedData.phone_no2 = newuser.phone_no2;
-						SavedData.dept_id = newuser.dept_id;
-						SavedData.corresponding_address = newuser.corresponding_address;
-						SavedData.date_of_birth = newuser.date_of_birth;
-						SavedData.designation = newuser.designation;
-						SavedData.hiring_date = newuser.hiring_date;
-						SavedData.permanent_address = newuser.permanent_address;
-						SavedData.created_by = newuser.created_by;
-						SavedData.updated_by = newuser.updated_by;
-						SavedData.created_at = newuser.created_at;
-						SavedData.updated_at = newuser.updated_at;
+						SavedData.Picture = newuser.Picture;
+						SavedData.FirstName = newuser.FirstName;
+						SavedData.LastName = newuser.LastName;
+						SavedData.Email = newuser.Email;
+						SavedData.Password = newuser.Password;
+						SavedData.PhoneNo1 = newuser.PhoneNo1;
+						SavedData.PhoneNo2 = newuser.PhoneNo2;
+						SavedData.DeptId = newuser.DeptId;
+						SavedData.CorrespondingAddress = newuser.CorrespondingAddress;
+						SavedData.DateOfBirth = newuser.DateOfBirth;
+						SavedData.Designation = newuser.Designation;
+						SavedData.HiringDate = newuser.HiringDate;
+						SavedData.PermanentAddress = newuser.PermanentAddress;
+						SavedData.CreatedBy = newuser.CreatedBy;
+						SavedData.ModifiedBy = newuser.ModifiedBy;
+						SavedData.DateCreated = newuser.DateCreated;
+						SavedData.DateModified = newuser.DateModified;
 						_context.User.Add(newuser);
 
 						if (_context.SaveChanges() > 0)
 						{
 
-							return new DataMessage<int>(ResponseType.Success, SavedData.id, "Data Saved");
+							return new DataMessage<int>(ResponseType.Success, SavedData.UserId, "Data Saved");
 
 						}
 						

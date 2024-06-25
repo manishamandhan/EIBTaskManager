@@ -5,72 +5,72 @@ namespace TaskManagementModel.Models
 	public class User
 	{
 		[Key]
-		public int id { get; set; }
+		public int UserId { get; set; }
 		
-		public byte[]? picture { get; set; } 
+		public byte[]? Picture { get; set; } 
 
 		
 		[Required(ErrorMessage = "First name is required.")]
-		public string first_name { get; set; }
+		public string FirstName { get; set; }
 
 		
-		public string? last_name { get; set; }
+		public string? LastName { get; set; }
 
 		
 		[EmailAddress(ErrorMessage = "Invalid email address.")]
-		public string? email { get; set; }
+		public string? Email { get; set; }
 
 		
 		[MinLength(6, ErrorMessage = "Password must be at least 6 characters long.")]
-		public string? password { get; set; }
+		public string? Password { get; set; }
 
 		
 		[RegularExpression(@"^\d{10}$", ErrorMessage = "Phone number must be 10 digits.")]
-		public string? phone_no1 { get; set; }
+		public string? PhoneNo1 { get; set; }
 
 		[RegularExpression(@"^\d{10}$", ErrorMessage = "Phone number must be 10 digits.")]
-		public string? phone_no2 { get; set; }
+		public string? PhoneNo2 { get; set; }
 
 		
 		[Range(1, int.MaxValue, ErrorMessage = "Department ID must be a positive number.")]
-		public int? dept_id { get; set; }
+		public int? DeptId { get; set; }
 
 	
 		[DataType(DataType.Date, ErrorMessage = "Invalid date format.")]
-		public DateTime date_of_birth { get; set; }
+		public DateTime DateOfBirth { get; set; }
 
 		
 		[Required(ErrorMessage = "Designation is required.")]
-		public string designation { get; set; }
+		public string Designation { get; set; }
 
 	
-		public DateTime? hiring_date { get; set; }
+		public DateTime? HiringDate { get; set; }
 
 		
 		[Required(ErrorMessage = "Permanent address is required.")]
-		public string? permanent_address { get; set; }
+		public string? PermanentAddress { get; set; }
 
 		
-		public string? corresponding_address { get; set; }
+		public string? CorrespondingAddress { get; set; }
 
 		
 		[Editable(false)]
-		public bool is_deleted { get; set; }
+		public bool IsDeleted { get; set; }
 
 		
 		[Required(ErrorMessage = "Created by is required.")]
-		public string created_by { get; set; }
+		public string CreatedBy { get; set; }
 
 		
 		[Required(ErrorMessage = "Updated by is required.")]
-		public string updated_by { get; set; }
+		public string ModifiedBy { get; set; }
 
 		
 		[DataType(DataType.DateTime)]
-		public DateTime created_at { get; set; }
+		public DateTime DateCreated { get; set; }
 
 		[DataType(DataType.DateTime)]
-		public DateTime updated_at { get; set; }
+		public DateTime DateModified { get; set; }
 		
 	}
 

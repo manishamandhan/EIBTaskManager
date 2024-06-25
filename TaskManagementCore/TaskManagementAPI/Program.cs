@@ -13,6 +13,7 @@ builder.Services.AddDbContext<TaskManagementDbContext>(options => options.UseSql
 	builder.Configuration.GetConnectionString("DefaultConnection")
 	));
 
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
@@ -21,10 +22,13 @@ builder.Services.AddCors(options =>
             builder
             .AllowAnyOrigin()
             .AllowAnyMethod()
-            .AllowAnyHeader();
-            //.AllowCredentials();
-        });
+            .AllowAnyHeader()
+            .WithOrigins("https://localhost:3000", "http://localhost:3000");
+
+			//.AllowCredentials();
+		});
 });
+
 var test = builder.Configuration.GetConnectionString("DefaultConnection");
 var app = builder.Build();
 // Configure the HTTP request pipeline.

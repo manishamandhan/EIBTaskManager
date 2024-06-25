@@ -149,188 +149,192 @@ namespace TaskManagementModel.Migrations
 
             modelBuilder.Entity("TaskManagementModel.Models.Project", b =>
                 {
-                    b.Property<int>("projectid")
+                    b.Property<int>("ProjectId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("projectid"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProjectId"));
 
-                    b.Property<DateTime>("created_at")
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateCreated")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("created_by")
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("is_deleted")
+                    b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<string>("name")
+                    b.Property<int>("ModifiedBy")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("updated_at")
-                        .HasColumnType("datetime2");
+                    b.HasKey("ProjectId");
 
-                    b.Property<string>("updated_by")
-                        .HasColumnType("nvarchar(max)");
+                    b.HasIndex("CreatedBy");
 
-                    b.HasKey("projectid");
+                    b.HasIndex("ModifiedBy");
 
                     b.ToTable("Project");
                 });
 
             modelBuilder.Entity("TaskManagementModel.Models.Task", b =>
                 {
-                    b.Property<int>("taskid")
+                    b.Property<int>("TaskId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("taskid"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TaskId"));
 
-                    b.Property<int>("assignee")
+                    b.Property<int>("AssigneeId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("created_at")
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateCreated")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("created_by")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("description")
+                    b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("dev_complete_date")
+                    b.Property<DateTime>("DevCompleteDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("dev_estimate_date")
+                    b.Property<DateTime>("DevEstimateDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("dev_start_date")
+                    b.Property<DateTime>("DevStartDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("is_deleted")
+                    b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<string>("name")
+                    b.Property<int>("ModifiedBy")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("owner")
+                    b.Property<int>("OwnerId")
                         .HasColumnType("int");
 
-                    b.Property<int>("projectid")
+                    b.Property<int>("ProjectId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("qa_complete_date")
+                    b.Property<DateTime>("QaCompleteDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("qa_estimate_date")
+                    b.Property<DateTime>("QaEstimateDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("qa_start_date")
+                    b.Property<DateTime>("QaStartDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("reportee")
+                    b.Property<int>("ReporteeId")
                         .HasColumnType("int");
 
-                    b.Property<string>("status")
+                    b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("updated_at")
-                        .HasColumnType("datetime2");
+                    b.HasKey("TaskId");
 
-                    b.Property<int>("updated_by")
-                        .HasColumnType("int");
+                    b.HasIndex("AssigneeId");
 
-                    b.HasKey("taskid");
+                    b.HasIndex("CreatedBy");
 
-                    b.HasIndex("assignee");
+                    b.HasIndex("ModifiedBy");
 
-                    b.HasIndex("created_by");
+                    b.HasIndex("OwnerId");
 
-                    b.HasIndex("owner");
+                    b.HasIndex("ProjectId");
 
-                    b.HasIndex("projectid");
-
-                    b.HasIndex("reportee");
-
-                    b.HasIndex("updated_by");
+                    b.HasIndex("ReporteeId");
 
                     b.ToTable("Task");
                 });
 
             modelBuilder.Entity("TaskManagementModel.Models.User", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"));
 
-                    b.Property<string>("corresponding_address")
+                    b.Property<string>("CorrespondingAddress")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("created_at")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("created_by")
+                    b.Property<string>("CreatedBy")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("date_of_birth")
+                    b.Property<DateTime>("DateCreated")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("dept_id")
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("DeptId")
                         .HasColumnType("int");
 
-                    b.Property<string>("designation")
+                    b.Property<string>("Designation")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("email")
+                    b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("first_name")
+                    b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("hiring_date")
+                    b.Property<DateTime?>("HiringDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("is_deleted")
+                    b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<string>("last_name")
+                    b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("password")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("permanent_address")
+                    b.Property<string>("ModifiedBy")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("phone_no1")
+                    b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("phone_no2")
+                    b.Property<string>("PermanentAddress")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<byte[]>("picture")
+                    b.Property<string>("PhoneNo1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNo2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("Picture")
                         .HasColumnType("varbinary(max)");
 
-                    b.Property<DateTime>("updated_at")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("updated_by")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("id");
+                    b.HasKey("UserId");
 
                     b.ToTable("User");
                 });
@@ -357,55 +361,74 @@ namespace TaskManagementModel.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("TaskManagementModel.Models.Project", b =>
+                {
+                    b.HasOne("TaskManagementModel.Models.User", "CreatedByUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedBy")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("TaskManagementModel.Models.User", "ModifiedByUser")
+                        .WithMany()
+                        .HasForeignKey("ModifiedBy")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("CreatedByUser");
+
+                    b.Navigation("ModifiedByUser");
+                });
+
             modelBuilder.Entity("TaskManagementModel.Models.Task", b =>
                 {
-                    b.HasOne("TaskManagementModel.Models.User", "assignee_fk")
+                    b.HasOne("TaskManagementModel.Models.User", "Assignee")
                         .WithMany()
-                        .HasForeignKey("assignee")
+                        .HasForeignKey("AssigneeId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("TaskManagementModel.Models.User", "created_by_fk")
+                    b.HasOne("TaskManagementModel.Models.User", "CreatedByUser")
                         .WithMany()
-                        .HasForeignKey("created_by")
+                        .HasForeignKey("CreatedBy")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("TaskManagementModel.Models.User", "owner_fk")
+                    b.HasOne("TaskManagementModel.Models.User", "ModifiedByUser")
                         .WithMany()
-                        .HasForeignKey("owner")
+                        .HasForeignKey("ModifiedBy")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("TaskManagementModel.Models.User", "project_id_fk")
+                    b.HasOne("TaskManagementModel.Models.User", "Owner")
                         .WithMany()
-                        .HasForeignKey("projectid")
+                        .HasForeignKey("OwnerId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("TaskManagementModel.Models.User", "reportee_fk")
+                    b.HasOne("TaskManagementModel.Models.Project", "Projectid")
                         .WithMany()
-                        .HasForeignKey("reportee")
+                        .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("TaskManagementModel.Models.User", "updated_by_fk")
+                    b.HasOne("TaskManagementModel.Models.User", "Reportee")
                         .WithMany()
-                        .HasForeignKey("updated_by")
+                        .HasForeignKey("ReporteeId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.Navigation("assignee_fk");
+                    b.Navigation("Assignee");
 
-                    b.Navigation("created_by_fk");
+                    b.Navigation("CreatedByUser");
 
-                    b.Navigation("owner_fk");
+                    b.Navigation("ModifiedByUser");
 
-                    b.Navigation("project_id_fk");
+                    b.Navigation("Owner");
 
-                    b.Navigation("reportee_fk");
+                    b.Navigation("Projectid");
 
-                    b.Navigation("updated_by_fk");
+                    b.Navigation("Reportee");
                 });
 #pragma warning restore 612, 618
         }

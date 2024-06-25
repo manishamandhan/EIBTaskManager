@@ -1,22 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TaskManagementModel.Models
 {
 	public class Project
 	{
 		[Key]
-		public int projectid { get; set; }
-		public string? name { get; set; }
-		public string? description { get; set; }
-		public bool is_deleted { get; set; }
-		public string? created_by { get; set; }
-		public string? updated_by { get; set; }
-		public DateTime created_at { get; set; }
-		public DateTime updated_at { get; set; }
+		public int ProjectId { get; set; }
+		public string? Name { get; set; }
+		public string? Description { get; set; }
+		public bool IsDeleted { get; set; }
+		public int CreatedBy { get; set; }
+
+		[ForeignKey("CreatedBy")]
+		//[JsonIgnore]
+		public virtual User? CreatedByUser { get; set; }
+
+		public int ModifiedBy { get; set; }
+		[ForeignKey("ModifiedBy")]
+		//[JsonIgnore]
+
+		public virtual User? ModifiedByUser { get; set; }
+
+		public DateTime DateCreated { get; set; }
+		public DateTime DateModified { get; set; }
 	}
 }

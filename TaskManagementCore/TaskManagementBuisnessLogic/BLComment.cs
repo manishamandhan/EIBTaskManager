@@ -89,7 +89,7 @@ namespace TaskManagementBuisnessLogic
 					}
 					else
 					{
-						commentdetail.is_deleted = !commentdetail.is_deleted;
+						commentdetail.IsDeleted = !commentdetail.IsDeleted;
 						_context.SaveChanges();
 						return new stringMessage("", ResponseType.Success);
 					}

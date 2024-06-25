@@ -6,6 +6,19 @@
 		Failed,
 		Exception
 	}
+	public enum TaskStatus
+	{
+		ToDo,
+		InDev,
+		DevComplete,
+		InQA,
+		QAComplete,
+		InUAT,
+		UATComplete,
+		DeploymentReady,
+		Done
+
+	}
 
 	public static class APIResponseMessages
 	{
@@ -65,7 +78,5 @@
 					Resp = _Resp;
 				}
 			}
-		}
-	
-
+	}
 }

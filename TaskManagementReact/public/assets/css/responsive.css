@@ -1,0 +1,76 @@
+@media only screen and (max-width: 1200px) {}
+  
+@media (min-width: 992px) {
+    .offcanvas-lg {
+        background-color: #ededed57!important;
+    }
+}
+@media only screen and (max-width: 999px) {
+    .canvas-width-set {
+        width: 300px !important;
+    }
+
+    .img-logo-eib-1>img {
+        /* max-width: 143px; */
+        display: none;
+    }
+
+    /* .logout-btn {
+        max-width: 100px;
+        position: unset !important;
+        bottom: 0;
+    } */
+    .offcanvas-lg .offcanvas-body {
+        display: flex;
+        flex-grow: 0;
+        padding: 0;
+        overflow-y: visible;
+        background-color: #dbdbdb !important;
+        height: 100vh;
+    }
+    .sidebar-12{
+        overflow: scroll;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .left-signup-form {
+        padding: 70px 10px;
+    }
+
+    .signup-main-form {
+        padding: 9px;
+    }
+}
+
+
+
+@media only screen and (max-width: 525px) {
+    .search-bar {
+        display: none;
+    }
+}
+@media only screen and (max-width: 475px) {
+    .css-1lddlii-MuiButtonBase-root-MuiButton-root {
+        margin-left: -51px !important;
+        padding: 4px 8px !important;
+    }
+
+    .left-main-form {
+        padding: 20px;
+    }
+    .login-form-section>h3 {
+        font-size: 35px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .login-form-section>h3 {
+        font-size: 24px;
+    }
+    .heading-daily-task>h2 {
+        font-size: 27px;
+        font-weight: 700;
+    }
+}
