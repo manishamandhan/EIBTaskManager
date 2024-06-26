@@ -1,0 +1,489 @@
+{
+	"info": {
+		"_postman_id": "7839b064-cfff-4755-ba0b-81a3030f1e19",
+		"name": "EIBTaskManager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36438080"
+	},
+	"item": [
+		{
+			"name": "TaskManagementAPI",
+			"item": [
+				{
+					"name": "Controller",
+					"item": [
+						{
+							"name": "UserDataController",
+							"item": [
+								{
+									"name": "GetAll Users",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{auth_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://{{hostname}}:{{port}}/api/UserData/GetAll",
+											"protocol": "https",
+											"host": [
+												"{{hostname}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"api",
+												"UserData",
+												"GetAll"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get User By Id",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{auth_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://{{hostname}}:{{port}}/api/UserData/GetById?userId=16",
+											"protocol": "https",
+											"host": [
+												"{{hostname}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"api",
+												"UserData",
+												"GetById"
+											],
+											"query": [
+												{
+													"key": "",
+													"value": "",
+													"disabled": true
+												},
+												{
+													"key": "userId",
+													"value": "16"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add New User",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{auth_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"firstName\": \"Manisha\",\r\n  \"lastName\": \"Mandhan\",\r\n  \"email\": \"manisha.mandhan@expertitbrains.com\",\r\n  \"password\": \"Manisha1990#\",\r\n  \"phoneNo1\": \"9468182789\",\r\n  \"phoneNo2\": \"8178678568\",\r\n  \"deptId\": 12345,\r\n  \"dateOfBirth\": \"1990-09-01\",\r\n  \"designation\": \"Jr.Developer\",\r\n  \"hiringDate\": \"2024-06-01\",\r\n  \"permanentAddress\": \"Kurukshetra\",\r\n  \"correspondingAddress\": \"panchkula\",\r\n  \"isDeleted\": false,\r\n  \"createdBy\": \"Hr\",\r\n  \"modifiedBy\": \"Hr\",\r\n  \"dateCreated\": \"2024-06-01\",\r\n  \"dateModified\": \"2024-06-20T06:32:39.007Z\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{hostname}}:{{port}}/api/UserData/Save",
+											"protocol": "https",
+											"host": [
+												"{{hostname}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"api",
+												"UserData",
+												"Save"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update Existing User",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{auth_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"userId\": 16,  \r\n  \"firstName\": \"Manisha\",\r\n  \"lastName\": \"Mandhan\",\r\n  \"email\": \"manisha.mandhan@expertitbrains.com\",\r\n  \"password\": \"Manisha1990#\",\r\n  \"phoneNo1\": \"9468182789\",\r\n  \"phoneNo2\": \"8178678568\",\r\n  \"deptId\": 12345,\r\n  \"dateOfBirth\": \"1990-09-01\",\r\n  \"designation\": \"Jr.Developer\",\r\n  \"hiringDate\": \"2024-06-01\",\r\n  \"permanentAddress\": \"Kkr\",\r\n  \"correspondingAddress\": \"Pkl\",\r\n  \"isDeleted\": false,\r\n  \"createdBy\": \"Hr\",\r\n  \"modifiedBy\": \"Hr\",\r\n  \"dateCreated\": \"2024-06-01\",\r\n  \"dateModified\": \"2024-06-20T06:32:39.007Z\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{hostname}}:{{port}}/api/UserData/Update",
+											"protocol": "https",
+											"host": [
+												"{{hostname}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"api",
+												"UserData",
+												"Update"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "TaskController",
+							"item": [
+								{
+									"name": "GetAll Task",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{auth_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://{{hostname}}:{{port}}/api/Task/GetAll",
+											"protocol": "https",
+											"host": [
+												"{{hostname}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"api",
+												"Task",
+												"GetAll"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Task By Id",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{auth_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://{{hostname}}:{{port}}/api/Task/GetById?TaskId=1",
+											"protocol": "https",
+											"host": [
+												"{{hostname}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"api",
+												"Task",
+												"GetById"
+											],
+											"query": [
+												{
+													"key": "TaskId",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update and Save Task",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{auth_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n \"taskId\": 1,\r\n  \r\n  \"name\": \"DbModels\",\r\n  \"description\": \"testing Database\",\r\n  \"status\": \"Progress\",\r\n  \"isDeleted\": false,\r\n  \"createdBy\": 16,\r\n  \r\n  \"modifiedBy\": 16,\r\n \r\n  \"dateCreated\": \"2024-06-20T10:42:21.266Z\",\r\n  \"dateModified\": \"2024-06-20T10:42:21.266Z\",\r\n  \"devStartDate\": \"2024-06-20T10:42:21.266Z\",\r\n  \"devCompleteDate\": \"2024-06-20T10:42:21.266Z\",\r\n  \"devEstimateDate\": \"2024-06-20T10:42:21.266Z\",\r\n  \"qaStartDate\": \"2024-06-20T10:42:21.266Z\",\r\n  \"qaCompleteDate\": \"2024-06-20T10:42:21.266Z\",\r\n  \"qaEstimateDate\": \"2024-06-20T10:42:21.266Z\",\r\n  \"ownerId\": 16,\r\n \r\n  \"reporteeId\": 1,\r\n  \r\n  \"assigneeId\": 16,\r\n \r\n  \"projectId\": 1\r\n  \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{hostname}}:{{port}}/api/Task/put",
+											"protocol": "https",
+											"host": [
+												"{{hostname}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"api",
+												"Task",
+												"put"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "ProjectController",
+							"item": [
+								{
+									"name": "GetAll Projects",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{auth_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://{{hostname}}:{{port}}/api/Project/GetAll",
+											"protocol": "https",
+											"host": [
+												"{{hostname}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"api",
+												"Project",
+												"GetAll"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Project By Id",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{auth_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://{{hostname}}:{{port}}/api/Project/GetById?ProjectId=2",
+											"protocol": "https",
+											"host": [
+												"{{hostname}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"api",
+												"Project",
+												"GetById"
+											],
+											"query": [
+												{
+													"key": "ProjectId",
+													"value": "2"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add New Project",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{auth_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \r\n  \"name\": \"EIBTaskManager\",\r\n  \"description\": \"Testing\",\r\n  \"isDeleted\": false,\r\n  \"createdBy\": 1,\r\n \r\n  \"modifiedBy\": 16,\r\n  \r\n  \"dateCreated\": \"2024-06-20T10:05:23.562Z\",\r\n  \"dateModified\": \"2024-06-20T10:05:23.562Z\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{hostname}}:{{port}}/api/Project/Save",
+											"protocol": "https",
+											"host": [
+												"{{hostname}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"api",
+												"Project",
+												"Save"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update Existing Project",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{auth_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"projectId\": 2,\r\n  \"name\": \"EIBTaskManager\",\r\n  \"description\": \"Testing\",\r\n  \"isDeleted\": false,\r\n  \"createdBy\": 2,\r\n \r\n  \"modifiedBy\": 1,\r\n  \r\n  \"dateCreated\": \"2024-06-20T10:05:23.562Z\",\r\n  \"dateModified\": \"2024-06-20T10:05:23.562Z\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{hostname}}:{{port}}/api/Project/Update",
+											"protocol": "https",
+											"host": [
+												"{{hostname}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"api",
+												"Project",
+												"Update"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
