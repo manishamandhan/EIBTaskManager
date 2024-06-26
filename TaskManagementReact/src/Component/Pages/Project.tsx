@@ -1,8 +1,10 @@
 
 import React, { useEffect, useState } from 'react'
 import { config } from './Constant'
-import { Myprojectdetaillist } from '../Lists/Myprojectdetaillist'
-export const Myprojects = () => {
+import { ProjectDetailList } from '../Lists/ProjectDetailList'
+
+
+export const Project = () => {
   const [loading, setLoading] = useState(false)
   const [projectdata, setProjectdata] = useState([])
   const [error, setError] = useState(null);
@@ -35,7 +37,7 @@ export const Myprojects = () => {
     fetchData();
   }, []);
   return (
-    <Myprojectdetaillist MyprojectCL={projectdata} fetchData={fetchData} />
+    <ProjectDetailList ProjectCL={projectdata} fetchData={fetchData} />
 
   )
 }

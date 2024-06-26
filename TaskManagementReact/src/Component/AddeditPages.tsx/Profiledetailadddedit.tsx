@@ -166,6 +166,7 @@ const Profiledetailaddedit: React.FC<Iprops> = ({ handleClose, initValues, Open,
                     className="input-box"
                     error={touched.firstName && !!errors.firstName}
                     helperText={touched.firstName && errors.firstName}
+                    
                   />
                 </Grid>
                 <Grid item xs={12} md={6}>

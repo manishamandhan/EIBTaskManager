@@ -12,6 +12,7 @@ import RestoreFromTrashIcon from '@mui/icons-material/RestoreFromTrash';
 import Moment from 'moment';
 import { TaskDetailAddEdit } from '../AddeditPages.tsx/TaskDetailAddEdit';
 import { UserModel } from '../Model/UserModel';
+import { ProjectModel } from '../Model/ProjectModel';
 
 interface Iprops {
   TaskCL: TaskModel[],
@@ -35,11 +36,14 @@ export const TaskDetailList: React.FC<Iprops> = ({ TaskCL, fetchData }) => {
     qaCompleteDate: new Date(),
     qaEstimateDate: new Date(),
     ownerId: 0,
-    owner : {} as UserModel,
+    // owner : {} as UserModel,
     reporteeId: 0,
+    // reportee : {} as UserModel,
     assigneeId: 0,
-
-    projectId : 0,};
+    // assignee : {} as UserModel,
+    projectId : 0,
+    // project : {} as ProjectModel
+  };
 
   
   const [Open, setOpen] = React.useState(false);

@@ -11,6 +11,8 @@ import { Formik, Form, Field } from 'formik';
 import { json } from 'stream/consumers';
 import { config } from '../Pages/Constant';
 import { TaskModel } from '../Model/TaskModel';
+import Select from "react-dropdown-select";
+import { SelectUser, SelectProject } from '../Elements/select';
 
 interface Iprops {
   TaskCL: TaskModel,
@@ -91,8 +93,9 @@ export const TaskDetailAddEdit: React.FC<Iprops> = ({ handleClose, Open, TaskCL,
             })
             .catch((error) => {
               setLoading(false);
-              setError(error.message);
               alert(error.message);
+              setError(error.message);
+              
               console.error('Error:', error);
             });
         }}
@@ -269,69 +272,23 @@ export const TaskDetailAddEdit: React.FC<Iprops> = ({ handleClose, Open, TaskCL,
                   />
                 </Grid> */}
                 <Grid item xs={12} md={6}>
-                  <InputLabel htmlFor="ownerId">ownerId</InputLabel>
-                  <TextField
-                    fullWidth
-                    margin="dense"
-                    id="ownerId"
-                    name="ownerId"
-                    type='string'
-                    value={values.owner.email|| ''}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    className="input-box"
-                    error={touched.ownerId && !!errors.ownerId}
-                    helperText={touched.ownerId && errors.ownerId}
-                  />
+                  <InputLabel htmlFor="ownerId">Owner</InputLabel>
+                  <SelectUser name="ownerId" placeholder='Owner' label="" />
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <InputLabel htmlFor="reporteeId">reporteeId</InputLabel>
-                  <TextField
-                    fullWidth
-                    margin="dense"
-                    id="reporteeId"
-                    name="reporteeId"
-                    type='number'
-                    value={values.reporteeId || ''}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    className="input-box"
-                    error={touched.reporteeId && !!errors.reporteeId}
-                    helperText={touched.reporteeId && errors.reporteeId}
-                  />
+                  <InputLabel htmlFor="reporteeId">Reportee</InputLabel>
+                  <SelectUser name="reporteeId" placeholder='Reportee' label="" />
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <InputLabel htmlFor="assigneeId">assigneeId</InputLabel>
-                  <TextField
-                    fullWidth
-                    margin="dense"
-                    id="assigneeId"
-                    name="assigneeId"
-                    type='number'
-                    value={values.assigneeId || ''}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    className="input-box"
-                    error={touched.assigneeId && !!errors.assigneeId}
-                    helperText={touched.assigneeId && errors.assigneeId}
-                  />
+                  <InputLabel htmlFor="assigneeId">Assignee</InputLabel>
+                  <SelectUser name="assigneeId" placeholder='Assignee' label="" />
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <InputLabel htmlFor="projectId">projectId</InputLabel>
-                  <TextField
-                    fullWidth
-                    margin="dense"
-                    id="projectId"
-                    name="projectId"
-                    type='number'
-                    value={values.projectId || ''}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    className="input-box"
-                    error={touched.projectId && !!errors.projectId}
-                    helperText={touched.projectId && errors.projectId}
-                  />
+                  <InputLabel htmlFor="projectId">Project</InputLabel>
+                  <SelectProject name="projectId" placeholder='Project' label="" />
                 </Grid>
+               
+               
                 
               </Grid>
             </DialogContent>

@@ -10,7 +10,7 @@ import { Profilepage } from './Component/Pages/Profilepage';
 import Layout from './Component/Pages/Layout';
 import { Calendar } from './Component/Pages/Calendar';
 import { Task } from './Component/Pages/Task';
-import { Myprojects } from './Component/Pages/Myprojects';
+import { Project } from './Component/Pages/Project';
 import { Users } from './Component/Pages/Users';
 
 
@@ -30,7 +30,7 @@ function App() {
 
         { path: '/Dsrpagedata', element: <Dsrpagedata /> },
         { path: '/Profilepage', element: <Profilepage /> },
-        { path: '/Myprojects', element: <Myprojects /> },
+        { path: '/Myprojects', element: <Project /> },
         { path: '/Calender', element: <Calendar /> },
         { path: '/Mytasks', element: <Task /> },
         { path: '/Profile/:userId', element: <Profilepage /> },

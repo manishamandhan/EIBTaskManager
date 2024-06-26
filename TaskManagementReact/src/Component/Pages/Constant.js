@@ -11,8 +11,8 @@ export const prod = {
 }
 export const dev = {
   url: {
-     //API_URL: "http://localhost:5175/api"
-     API_URL: "https://localhost:7018/api"
+     API_URL: "http://localhost:5175/api"
+    //  API_URL: "https://localhost:7018/api"
   }
   
 

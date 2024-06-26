@@ -48,7 +48,7 @@ export const Profilepage = ({profileId="16"}) => {
 
     setLoading(true)
    
-    fetch(config.url.API_URL + "/UserData/GetById?userId=" + profileId)
+    fetch(config.url.API_URL + "/UserData/GetById?userId=" + userId)
       .then((response) => {
         if (response.ok) {
           return response.json();

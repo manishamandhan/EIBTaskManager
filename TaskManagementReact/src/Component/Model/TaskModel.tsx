@@ -1,3 +1,4 @@
+import { ProjectModel } from "./ProjectModel";
 import { UserModel } from "./UserModel";
 
 
@@ -18,8 +19,11 @@ export interface TaskModel {
   qaCompleteDate: Date;
   qaEstimateDate: Date;
   ownerId: number;
-  owner : UserModel;
+  // owner : UserModel;
   reporteeId: number;
+  // reportee : UserModel;
   assigneeId: number;
+  // assignee : UserModel;
   projectId : number;
+  // project : ProjectModel
 }

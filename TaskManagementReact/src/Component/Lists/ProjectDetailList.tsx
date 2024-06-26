@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { Myprojectmodel } from '../Model/Myprojectmodel'
+import { ProjectModel } from '../Model/ProjectModel'
 
-interface Projectprops {
-    MyprojectCL: Myprojectmodel[];
+interface Iprops {
+    ProjectCL: ProjectModel[];
     fetchData: () => void;
 }
-export const Myprojectdetaillist: React.FC<Projectprops> = ({ MyprojectCL, fetchData }) => {
-    const initialProjectdata: Myprojectmodel = {
+export const ProjectDetailList: React.FC<Iprops> = ({ ProjectCL: MyprojectCL, fetchData }) => {
+    const initialProjectdata: ProjectModel = {
         projectid: 0,
         name: "",
         description: "",
