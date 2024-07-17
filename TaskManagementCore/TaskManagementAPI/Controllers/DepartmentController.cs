@@ -28,7 +28,7 @@ namespace TaskManagementAPI.Controllers
 		public ActionResult<stringMessage> Delete(int id)
 		{
 			TaskManagementDbContext context = new TaskManagementDbContext();
-			return BLDepartment.Instance().Delete(new Department { DepartmentModelId = id });
+			return BLDepartment.Instance().Delete(new Department { DepartmentId = id });
 		}
 		[HttpPost]
 

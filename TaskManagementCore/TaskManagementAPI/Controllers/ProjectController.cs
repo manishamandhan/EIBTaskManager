@@ -29,16 +29,29 @@ namespace TaskManagementAPI.Controllers
 			return BLProject.Instance().Delete(new Project { ProjectId = id });
 		}
 		[HttpPost]
+		public ActionResult<DataMessage<int>> put(Project Project)
+		{
+			TaskManagementDbContext context = new TaskManagementDbContext();
+			if (Project.ProjectId == 0)
+			{
+				var saveresponse = BLProject.Instance().Save(Project);
+				return saveresponse;
+			}
+			var updateresponse = BLProject.Instance().Update(Project);
+			return updateresponse;
+		}
 
-		public DataMessage<int> Update(Project project)
-		{
-			return BLProject.Instance().Update(project);
-		}
-		[HttpPost]
-		public DataMessage<int> Save(Project project)
-		{
-			return BLProject.Instance().Save(project);
-		}
+		//[HttpPost]
+
+		//public DataMessage<int> Update(Project project)
+		//{
+		//	return BLProject.Instance().Update(project);
+		//}
+		//[HttpPost]
+		//public DataMessage<int> Save(Project project)
+		//{
+		//	return BLProject.Instance().Save(project);
+		//}
 	}
 }
 

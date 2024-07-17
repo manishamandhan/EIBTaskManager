@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using TaskManagementBuisnessLogic;
 using TaskManagementCore.Data;
 using TaskManagementModel.Models;
+using TaskManagementModel.Models.StoredProcedureModels;
 using static TaskManagementBuisnessLogic.BLCommon;
 
 namespace TaskManagementAPI.Controllers
@@ -10,15 +12,23 @@ namespace TaskManagementAPI.Controllers
 	[ApiController]
 	public class TaskController : Controller
 	{
+		[Authorize]
 		[HttpGet]
-		public DataListMessage<TaskManagementModel.Models.Task> GetAll()
+		public DataListMessage<getTasks> GetAll()
 		{
 			return BLTask.Instance().GetAll();
 		}
 		[HttpGet]
-		public DataMessage<TaskManagementModel.Models.Task> GetById(int TaskId)
+		[Authorize]
+		public DataListMessage<getOwnerTasks> GetAllTasksByOwner(int ownerId)
 		{
-			return BLTask.Instance().GetById(TaskId);
+			return BLTask.Instance().GetAllTasksByOwner(ownerId);
+		}
+		[HttpGet]
+		[Authorize]
+		public DataMessage<TaskManagementModel.Models.Tasks> GetById(int TasksId)
+		{
+			return BLTask.Instance().GetById(TasksId);
 		}
 
 		//[HttpPost]
@@ -33,10 +43,11 @@ namespace TaskManagementAPI.Controllers
 		//}
 
 		[HttpPost]
-		public ActionResult<DataMessage<int>> put(TaskManagementModel.Models.Task task) 
+		[Authorize]
+		public ActionResult<DataMessage<int>> put(TaskManagementModel.Models.Tasks task) 
 		{
 			TaskManagementDbContext context = new TaskManagementDbContext();
-			if (task.TaskId == 0)
+			if (task.TasksId == 0)
 			{
 				var saveresponse = BLTask.Instance().Save(task);
 				return saveresponse;
@@ -46,10 +57,20 @@ namespace TaskManagementAPI.Controllers
 		}
 
 		[HttpDelete]
+		[Authorize]
 		public ActionResult<stringMessage> Delete(int id)
 		{
 			TaskManagementDbContext context = new TaskManagementDbContext();
-			return BLTask.Instance().Delete(new TaskManagementModel.Models.Task { TaskId = id });
+			return BLTask.Instance().Delete(new TaskManagementModel.Models.Tasks { TasksId = id });
+		}
+
+		[HttpPut]
+		[Authorize]
+		public ActionResult<DataMessage<int>> updateStatus(TaskStatusModel taskStatusModel)
+		{
+			TaskManagementDbContext context = new TaskManagementDbContext();
+			var updateresponse = BLTask.Instance().UpdateStatus(taskStatusModel);
+			return updateresponse;
 		}
 
 	}

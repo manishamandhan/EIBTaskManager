@@ -3,64 +3,28 @@
   "WorkspaceRootPath": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3EB7238A-E4DB-4C87-B0F5-A0B90D03CCFF}|TaskManagementBuisnessLogic\\TaskManagementBuisnessLogic.csproj|d:\\manisha\\eibtaskmanager\\taskmanagementcore\\taskmanagementbuisnesslogic\\blcommon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EB7238A-E4DB-4C87-B0F5-A0B90D03CCFF}|TaskManagementBuisnessLogic\\TaskManagementBuisnessLogic.csproj|solutionrelative:taskmanagementbuisnesslogic\\blcommon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3EB7238A-E4DB-4C87-B0F5-A0B90D03CCFF}|TaskManagementBuisnessLogic\\TaskManagementBuisnessLogic.csproj|d:\\manisha\\eibtaskmanager\\taskmanagementcore\\taskmanagementbuisnesslogic\\blcomment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EB7238A-E4DB-4C87-B0F5-A0B90D03CCFF}|TaskManagementBuisnessLogic\\TaskManagementBuisnessLogic.csproj|solutionrelative:taskmanagementbuisnesslogic\\blcomment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3EB7238A-E4DB-4C87-B0F5-A0B90D03CCFF}|TaskManagementBuisnessLogic\\TaskManagementBuisnessLogic.csproj|d:\\manisha\\eibtaskmanager\\taskmanagementcore\\taskmanagementbuisnesslogic\\blusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EB7238A-E4DB-4C87-B0F5-A0B90D03CCFF}|TaskManagementBuisnessLogic\\TaskManagementBuisnessLogic.csproj|solutionrelative:taskmanagementbuisnesslogic\\blusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CABF9631-2ADD-4396-B954-9B83C482B433}|TaskManagementAPI\\TaskManagementAPI.csproj|d:\\manisha\\eibtaskmanager\\taskmanagementcore\\taskmanagementapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CABF9631-2ADD-4396-B954-9B83C482B433}|TaskManagementAPI\\TaskManagementAPI.csproj|solutionrelative:taskmanagementapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CABF9631-2ADD-4396-B954-9B83C482B433}|TaskManagementAPI\\TaskManagementAPI.csproj|d:\\manisha\\eibtaskmanager\\taskmanagementcore\\taskmanagementapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{CABF9631-2ADD-4396-B954-9B83C482B433}|TaskManagementAPI\\TaskManagementAPI.csproj|solutionrelative:taskmanagementapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CABF9631-2ADD-4396-B954-9B83C482B433}|TaskManagementAPI\\TaskManagementAPI.csproj|d:\\manisha\\eibtaskmanager\\taskmanagementcore\\taskmanagementapi\\controllers\\userdatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CABF9631-2ADD-4396-B954-9B83C482B433}|TaskManagementAPI\\TaskManagementAPI.csproj|solutionrelative:taskmanagementapi\\controllers\\userdatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4232B38-497B-482D-B8C7-E0098B02E271}|TaskManagementModel\\TaskManagementModel.csproj|d:\\manisha\\eibtaskmanager\\taskmanagementcore\\taskmanagementmodel\\migrations\\20240620093502_projecttodatabase_6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4232B38-497B-482D-B8C7-E0098B02E271}|TaskManagementModel\\TaskManagementModel.csproj|solutionrelative:taskmanagementmodel\\migrations\\20240620093502_projecttodatabase_6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4232B38-497B-482D-B8C7-E0098B02E271}|TaskManagementModel\\TaskManagementModel.csproj|d:\\manisha\\eibtaskmanager\\taskmanagementcore\\taskmanagementmodel\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4232B38-497B-482D-B8C7-E0098B02E271}|TaskManagementModel\\TaskManagementModel.csproj|solutionrelative:taskmanagementmodel\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3EB7238A-E4DB-4C87-B0F5-A0B90D03CCFF}|TaskManagementBuisnessLogic\\TaskManagementBuisnessLogic.csproj|d:\\manisha\\eibtaskmanager\\taskmanagementcore\\taskmanagementbuisnesslogic\\bltask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EB7238A-E4DB-4C87-B0F5-A0B90D03CCFF}|TaskManagementBuisnessLogic\\TaskManagementBuisnessLogic.csproj|solutionrelative:taskmanagementbuisnesslogic\\bltask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4232B38-497B-482D-B8C7-E0098B02E271}|TaskManagementModel\\TaskManagementModel.csproj|d:\\manisha\\eibtaskmanager\\taskmanagementcore\\taskmanagementmodel\\models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4232B38-497B-482D-B8C7-E0098B02E271}|TaskManagementModel\\TaskManagementModel.csproj|solutionrelative:taskmanagementmodel\\models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CABF9631-2ADD-4396-B954-9B83C482B433}|TaskManagementAPI\\TaskManagementAPI.csproj|d:\\manisha\\eibtaskmanager\\taskmanagementcore\\taskmanagementapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CABF9631-2ADD-4396-B954-9B83C482B433}|TaskManagementAPI\\TaskManagementAPI.csproj|solutionrelative:taskmanagementapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CABF9631-2ADD-4396-B954-9B83C482B433}|TaskManagementAPI\\TaskManagementAPI.csproj|d:\\manisha\\eibtaskmanager\\taskmanagementcore\\taskmanagementapi\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CABF9631-2ADD-4396-B954-9B83C482B433}|TaskManagementAPI\\TaskManagementAPI.csproj|solutionrelative:taskmanagementapi\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4232B38-497B-482D-B8C7-E0098B02E271}|TaskManagementModel\\TaskManagementModel.csproj|d:\\manisha\\eibtaskmanager\\taskmanagementcore\\taskmanagementmodel\\data\\taskmanagementdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4232B38-497B-482D-B8C7-E0098B02E271}|TaskManagementModel\\TaskManagementModel.csproj|solutionrelative:taskmanagementmodel\\data\\taskmanagementdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CABF9631-2ADD-4396-B954-9B83C482B433}|TaskManagementAPI\\TaskManagementAPI.csproj|d:\\manisha\\eibtaskmanager\\taskmanagementcore\\taskmanagementapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CABF9631-2ADD-4396-B954-9B83C482B433}|TaskManagementAPI\\TaskManagementAPI.csproj|solutionrelative:taskmanagementapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4232B38-497B-482D-B8C7-E0098B02E271}|TaskManagementModel\\TaskManagementModel.csproj|d:\\manisha\\eibtaskmanager\\taskmanagementcore\\taskmanagementmodel\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4232B38-497B-482D-B8C7-E0098B02E271}|TaskManagementModel\\TaskManagementModel.csproj|solutionrelative:taskmanagementmodel\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CABF9631-2ADD-4396-B954-9B83C482B433}|TaskManagementAPI\\TaskManagementAPI.csproj|d:\\manisha\\eibtaskmanager\\taskmanagementcore\\taskmanagementapi\\helper\\authorizeattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CABF9631-2ADD-4396-B954-9B83C482B433}|TaskManagementAPI\\TaskManagementAPI.csproj|solutionrelative:taskmanagementapi\\helper\\authorizeattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3EB7238A-E4DB-4C87-B0F5-A0B90D03CCFF}|TaskManagementBuisnessLogic\\TaskManagementBuisnessLogic.csproj|d:\\manisha\\eibtaskmanager\\taskmanagementcore\\taskmanagementbuisnesslogic\\blproject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EB7238A-E4DB-4C87-B0F5-A0B90D03CCFF}|TaskManagementBuisnessLogic\\TaskManagementBuisnessLogic.csproj|solutionrelative:taskmanagementbuisnesslogic\\blproject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3EB7238A-E4DB-4C87-B0F5-A0B90D03CCFF}|TaskManagementBuisnessLogic\\TaskManagementBuisnessLogic.csproj|d:\\manisha\\eibtaskmanager\\taskmanagementcore\\taskmanagementbuisnesslogic\\blusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB7238A-E4DB-4C87-B0F5-A0B90D03CCFF}|TaskManagementBuisnessLogic\\TaskManagementBuisnessLogic.csproj|solutionrelative:taskmanagementbuisnesslogic\\blusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CABF9631-2ADD-4396-B954-9B83C482B433}|TaskManagementAPI\\TaskManagementAPI.csproj|d:\\manisha\\eibtaskmanager\\taskmanagementcore\\taskmanagementapi\\controllers\\projectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CABF9631-2ADD-4396-B954-9B83C482B433}|TaskManagementAPI\\TaskManagementAPI.csproj|solutionrelative:taskmanagementapi\\controllers\\projectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4232B38-497B-482D-B8C7-E0098B02E271}|TaskManagementModel\\TaskManagementModel.csproj|d:\\manisha\\eibtaskmanager\\taskmanagementcore\\taskmanagementmodel\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4232B38-497B-482D-B8C7-E0098B02E271}|TaskManagementModel\\TaskManagementModel.csproj|solutionrelative:taskmanagementmodel\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,197 +34,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementAPI\\appsettings.json",
-              "RelativeDocumentMoniker": "TaskManagementAPI\\appsettings.json",
-              "ToolTip": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementAPI\\appsettings.json",
-              "RelativeToolTip": "TaskManagementAPI\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-24T10:16:06.297Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "TaskManagementDbContext.cs",
-              "DocumentMoniker": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementModel\\Data\\TaskManagementDbContext.cs",
-              "RelativeDocumentMoniker": "TaskManagementModel\\Data\\TaskManagementDbContext.cs",
-              "ToolTip": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementModel\\Data\\TaskManagementDbContext.cs",
-              "RelativeToolTip": "TaskManagementModel\\Data\\TaskManagementDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T13:25:44.271Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BLCommon.cs",
-              "DocumentMoniker": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementBuisnessLogic\\BLCommon.cs",
-              "RelativeDocumentMoniker": "TaskManagementBuisnessLogic\\BLCommon.cs",
-              "ToolTip": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementBuisnessLogic\\BLCommon.cs",
-              "RelativeToolTip": "TaskManagementBuisnessLogic\\BLCommon.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T10:48:57.92Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "20240620093502_ProjectToDatabase_6.cs",
-              "DocumentMoniker": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementModel\\Migrations\\20240620093502_ProjectToDatabase_6.cs",
-              "RelativeDocumentMoniker": "TaskManagementModel\\Migrations\\20240620093502_ProjectToDatabase_6.cs",
-              "ToolTip": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementModel\\Migrations\\20240620093502_ProjectToDatabase_6.cs",
-              "RelativeToolTip": "TaskManagementModel\\Migrations\\20240620093502_ProjectToDatabase_6.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAgwDAAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T09:35:03.017Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BLComment.cs",
-              "DocumentMoniker": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementBuisnessLogic\\BLComment.cs",
-              "RelativeDocumentMoniker": "TaskManagementBuisnessLogic\\BLComment.cs",
-              "ToolTip": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementBuisnessLogic\\BLComment.cs",
-              "RelativeToolTip": "TaskManagementBuisnessLogic\\BLComment.cs",
-              "ViewState": "AQIAAE0AAAAAAAAAAAAxwFgAAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T09:34:28.771Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ProjectController.cs",
-              "DocumentMoniker": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementAPI\\Controllers\\ProjectController.cs",
-              "RelativeDocumentMoniker": "TaskManagementAPI\\Controllers\\ProjectController.cs",
-              "ToolTip": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementAPI\\Controllers\\ProjectController.cs",
-              "RelativeToolTip": "TaskManagementAPI\\Controllers\\ProjectController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T09:33:18.375Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "BLProject.cs",
-              "DocumentMoniker": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementBuisnessLogic\\BLProject.cs",
-              "RelativeDocumentMoniker": "TaskManagementBuisnessLogic\\BLProject.cs",
-              "ToolTip": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementBuisnessLogic\\BLProject.cs",
-              "RelativeToolTip": "TaskManagementBuisnessLogic\\BLProject.cs",
-              "ViewState": "AQIAAIoAAAAAAAAAAAAmwAsAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T09:29:43.678Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Project.cs",
-              "DocumentMoniker": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementModel\\Models\\Project.cs",
-              "RelativeDocumentMoniker": "TaskManagementModel\\Models\\Project.cs",
-              "ToolTip": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementModel\\Models\\Project.cs",
-              "RelativeToolTip": "TaskManagementModel\\Models\\Project.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAxwBYAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T07:37:56.456Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "TaskController.cs",
-              "DocumentMoniker": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementAPI\\Controllers\\TaskController.cs",
-              "RelativeDocumentMoniker": "TaskManagementAPI\\Controllers\\TaskController.cs",
-              "ToolTip": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementAPI\\Controllers\\TaskController.cs",
-              "RelativeToolTip": "TaskManagementAPI\\Controllers\\TaskController.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAADwvygAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T13:27:47.57Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementAPI\\Program.cs",
-              "RelativeDocumentMoniker": "TaskManagementAPI\\Program.cs",
-              "ToolTip": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementAPI\\Program.cs",
-              "RelativeToolTip": "TaskManagementAPI\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T10:36:55.564Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "BLTask.cs",
-              "DocumentMoniker": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementBuisnessLogic\\BLTask.cs",
-              "RelativeDocumentMoniker": "TaskManagementBuisnessLogic\\BLTask.cs",
-              "ToolTip": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementBuisnessLogic\\BLTask.cs",
-              "RelativeToolTip": "TaskManagementBuisnessLogic\\BLTask.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAADgvzQAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T10:14:24.911Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Task.cs",
-              "DocumentMoniker": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementModel\\Models\\Task.cs",
-              "RelativeDocumentMoniker": "TaskManagementModel\\Models\\Task.cs",
-              "ToolTip": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementModel\\Models\\Task.cs",
-              "RelativeToolTip": "TaskManagementModel\\Models\\Task.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAgwA8AAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T09:55:04.388Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "UserDataController.cs",
-              "DocumentMoniker": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementAPI\\Controllers\\UserDataController.cs",
-              "RelativeDocumentMoniker": "TaskManagementAPI\\Controllers\\UserDataController.cs",
-              "ToolTip": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementAPI\\Controllers\\UserDataController.cs",
-              "RelativeToolTip": "TaskManagementAPI\\Controllers\\UserDataController.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAASwCUAAAACAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T07:34:40.081Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BLUsers.cs",
-              "DocumentMoniker": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementBuisnessLogic\\BLUsers.cs",
-              "RelativeDocumentMoniker": "TaskManagementBuisnessLogic\\BLUsers.cs",
-              "ToolTip": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementBuisnessLogic\\BLUsers.cs",
-              "RelativeToolTip": "TaskManagementBuisnessLogic\\BLUsers.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAowB8AAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T07:20:58.86Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementModel\\Models\\User.cs",
               "RelativeDocumentMoniker": "TaskManagementModel\\Models\\User.cs",
               "ToolTip": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementModel\\Models\\User.cs",
               "RelativeToolTip": "TaskManagementModel\\Models\\User.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAQwCMAAAAiAAAA",
+              "ViewState": "AQIAADcAAAAAAAAAAAAywE4AAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T06:58:47.386Z",
+              "WhenOpened": "2024-07-17T07:45:14.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BLUsers.cs",
+              "DocumentMoniker": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementBuisnessLogic\\BLUsers.cs",
+              "RelativeDocumentMoniker": "TaskManagementBuisnessLogic\\BLUsers.cs",
+              "ToolTip": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementBuisnessLogic\\BLUsers.cs",
+              "RelativeToolTip": "TaskManagementBuisnessLogic\\BLUsers.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAowDABAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-17T06:20:42.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthorizeAttribute.cs",
+              "DocumentMoniker": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementAPI\\Helper\\AuthorizeAttribute.cs",
+              "RelativeDocumentMoniker": "TaskManagementAPI\\Helper\\AuthorizeAttribute.cs",
+              "ToolTip": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementAPI\\Helper\\AuthorizeAttribute.cs",
+              "RelativeToolTip": "TaskManagementAPI\\Helper\\AuthorizeAttribute.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-17T07:38:43.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementAPI\\Program.cs",
+              "RelativeDocumentMoniker": "TaskManagementAPI\\Program.cs",
+              "ToolTip": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementAPI\\Program.cs",
+              "RelativeToolTip": "TaskManagementAPI\\Program.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAAEUAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-17T07:34:22.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TaskController.cs",
+              "DocumentMoniker": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementAPI\\Controllers\\TaskController.cs",
+              "RelativeDocumentMoniker": "TaskManagementAPI\\Controllers\\TaskController.cs",
+              "ToolTip": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementAPI\\Controllers\\TaskController.cs",
+              "RelativeToolTip": "TaskManagementAPI\\Controllers\\TaskController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-17T07:01:25.406Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementAPI\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "TaskManagementAPI\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\Manisha\\EIBTaskManager\\TaskManagementCore\\TaskManagementAPI\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "TaskManagementAPI\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-12T07:54:38.074Z",
               "EditorCaption": ""
             }
           ]

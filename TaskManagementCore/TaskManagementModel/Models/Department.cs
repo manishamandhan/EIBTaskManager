@@ -11,22 +11,25 @@ namespace TaskManagementModel.Models
 	public class Department
 	{
 		[Key]
-		public int DepartmentModelId { get; set; }
+		public int DepartmentId { get; set; }
+
 		[Required]
-		public string DepartmentName { get; set;}
-		
-		public bool is_deleted { get; set; }
-		public string? created_by { get; set; }
+		public string? DeptName { get; set; }
 
-		public string? updated_by { get; set; }
-		public DateTime created_at { get; set; }
-		public DateTime updated_at { get; set; }
+		public bool IsDeleted { get; set; }
 
-		public int UserId { get; set; }
+		//public int? ModifiedBy { get; set; }
+		//[ForeignKey("ModifiedBy")]
+		//public virtual User? ModifiedByUser { get; set; }
 
-		
-		[ForeignKey("UserId")]
-		public User User { get; set; }
-	}
+		public DateTime? DateCreated { get; set; }
+		public DateTime? DateModified { get; set; }
+
 	
+		//public int? CreatedBy { get; set; }
+
+
+	}
+
+
 }

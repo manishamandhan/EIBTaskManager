@@ -62,6 +62,12 @@
 		
 	}
 
+	public class TaskStatusModel
+	{
+		public int TasksId { get; set; }
+		public string Status { get; set; }
+	}
+
 	public class BLCommon
 		{
 			public class stringMessage

@@ -156,7 +156,7 @@ namespace TaskManagementBuisnessLogic
 						SavedData.DateModified = newproject.DateModified;
 						SavedData.IsDeleted = false;
 					
-						_context.Project.Add(newproject);
+						_context.Project.Add(SavedData);
 
 						if (_context.SaveChanges() > 0)
 						{

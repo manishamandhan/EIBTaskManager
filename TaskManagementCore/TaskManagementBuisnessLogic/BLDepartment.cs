@@ -31,6 +31,7 @@ namespace TaskManagementBuisnessLogic
 				using (TaskManagementDbContext _context = new TaskManagementDbContext())
 				{
 					var deptdata = _context.Department.ToList();
+					
 					if (deptdata != null)
 					{
 						return new DataListMessage<Department>(ResponseType.Success, deptdata, "Model Found");
@@ -53,7 +54,8 @@ namespace TaskManagementBuisnessLogic
 			{
 				using (TaskManagementDbContext _context = new TaskManagementDbContext())
 				{
-					var dept = _context.Department.Where(p => p.DepartmentModelId == id).FirstOrDefault();
+					var dept = _context.Department.Where(p => p.DepartmentId == id).FirstOrDefault();
+					
 					if (dept != null)
 					{
 						return new DataMessage<Department>(ResponseType.Success, dept, "Id Details Found");
@@ -80,7 +82,8 @@ namespace TaskManagementBuisnessLogic
 			{
 				using (TaskManagementDbContext _context = new TaskManagementDbContext())
 				{
-					var deptdetail = _context.Department.Find(item.DepartmentModelId);
+					var deptdetail = _context.Department.Find(item.DepartmentId);
+					
 					if (deptdetail == null)
 					{
 						return new stringMessage("cannot find the Entry", ResponseType.Exception);
@@ -88,7 +91,7 @@ namespace TaskManagementBuisnessLogic
 					}
 					else
 					{
-						deptdetail.is_deleted = !deptdetail.is_deleted;
+						deptdetail.IsDeleted = !deptdetail.IsDeleted;
 						_context.SaveChanges();
 						return new stringMessage("", ResponseType.Success);
 					}
@@ -108,21 +111,22 @@ namespace TaskManagementBuisnessLogic
 			{
 				using (TaskManagementDbContext _context = new TaskManagementDbContext())
 				{
-					var updateddata = _context.Department.Where(c => c.DepartmentModelId == newdata.DepartmentModelId).FirstOrDefault();
+					var updateddata = _context.Department.Where(c => c.DepartmentId == newdata.DepartmentId).FirstOrDefault();
+					
 					if (updateddata != null)
 					{
-						updateddata.DepartmentName = newdata.DepartmentName;
-						updateddata.UserId = newdata.UserId;
-						updateddata.is_deleted = newdata.is_deleted;
-						updateddata.created_by = newdata.created_by;
-						updateddata.updated_by = newdata.updated_by;
-						updateddata.created_at = newdata.created_at;
-						updateddata.updated_at = newdata.updated_at;
+						updateddata.DeptName = newdata.DeptName;
+						
+						updateddata.IsDeleted = newdata.IsDeleted;
+						//updateddata.CreatedBy = newdata.CreatedBy;
+						//updateddata.DateModified = newdata.DateModified;
+						updateddata.DateCreated = newdata.DateCreated;
+						updateddata.DateModified = newdata.DateModified;
 
 
 						if (_context.SaveChanges() > 0)
 						{
-							return new DataMessage<int>(ResponseType.Success, updateddata.DepartmentModelId, "Data Saved");
+							return new DataMessage<int>(ResponseType.Success, updateddata.DepartmentId, "Data Saved");
 
 						}
 
@@ -149,22 +153,22 @@ namespace TaskManagementBuisnessLogic
 					if (newdata != null)
 					{
 						Department SavedData = new Department();
-						SavedData.DepartmentName = newdata.DepartmentName;
-						SavedData.UserId = newdata.UserId;
+						SavedData.DeptName = newdata.DeptName;
+						
 
-						SavedData.created_by = newdata.created_by;
-						SavedData.updated_by = newdata.updated_by;
-						SavedData.created_at = newdata.created_at;
-						SavedData.updated_at = newdata.updated_at;
+						//SavedData.CreatedBy = newdata.CreatedBy;
+						//SavedData.DateModified = newdata.DateModified;
+						SavedData.DateCreated = newdata.DateCreated;
+						SavedData.DateModified = newdata.DateModified;
 
-						SavedData.is_deleted = false;
+						SavedData.IsDeleted = false;
 
 						_context.Department.Add(newdata);
 
 						if (_context.SaveChanges() > 0)
 						{
 
-							return new DataMessage<int>(ResponseType.Success, SavedData.DepartmentModelId, "Data Saved");
+							return new DataMessage<int>(ResponseType.Success, SavedData.DepartmentId, "Data Saved");
 
 						}
 

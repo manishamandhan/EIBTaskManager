@@ -1,7 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using TaskManagementCore.Data;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using TaskManagementAPI.Helper;
 
 var builder = WebApplication.CreateBuilder(args);
+var config = new ApplicationConfiguration();
 
 // Add services to the container.
 
@@ -28,6 +33,27 @@ builder.Services.AddCors(options =>
 			//.AllowCredentials();
 		});
 });
+builder.Services.AddAuthentication(auth =>
+{
+	auth.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+	auth.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+	.AddJwtBearer("Bearer", options =>
+	{
+		options.TokenValidationParameters = new TokenValidationParameters
+		{
+			ValidateIssuer = true,
+			ValidIssuer = config.JwtToken.Issuer,
+			ValidateAudience = true,
+			ValidAudience = config.JwtToken.Audience,
+			ValidateIssuerSigningKey = true,
+			IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config.JwtToken.SigningKey))
+		};
+	});
+builder.Services.AddSingleton<ApiKeyAuthorizationFilter>();
+
+//builder.Services.AddSingleton<IApiKeyValidator, ApiKeyValidator>();
+builder.Services.AddScoped<TaskManagementAPI.Helper.ApplicationConfiguration>();
 
 var test = builder.Configuration.GetConnectionString("DefaultConnection");
 var app = builder.Build();
@@ -38,6 +64,7 @@ if (app.Environment.IsDevelopment())
 	app.UseSwaggerUI();
 }
 app.UseHttpsRedirection();
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 app.UseCors("AllowAll");

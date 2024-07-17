@@ -1,6 +1,6 @@
+import React, { useEffect, useState } from 'react';
+import { config } from './Constant';
 
-import React, { useEffect, useState } from 'react'
-import { config } from './Constant'
 import { ProjectDetailList } from '../Lists/ProjectDetailList'
 
 
@@ -10,32 +10,26 @@ export const Project = () => {
   const [error, setError] = useState(null);
 
   const fetchData = () => {
-    setLoading(true)
-    fetch(config.url.API_URL +"/Project/GetAll")
+    fetch(config.url.API_URL + "/Project/GetAll")
       .then((response) => {
         if (response.ok) {
           return response.json();
         }
-        throw new Error("somthing went wrong");
+        throw new Error("Something went wrong");
       })
-      .then((res)=>{
-        setLoading(false);
+      .then((res) => {
         setProjectdata(res.data);
-        console.log("Data",res.data);
+        console.log("Data", res.data);
       })
-      .catch((error)=>{
-      setLoading(false);
-      setError(error.message);
-      console.log(error);
+      .catch((error) => {
+        console.error(error);
       });
   };
-
-
-
 
   useEffect(() => {
     fetchData();
   }, []);
+
   return (
     <ProjectDetailList ProjectCL={projectdata} fetchData={fetchData} />
 

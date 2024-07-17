@@ -19,6 +19,11 @@ namespace TaskManagementAPI.Controllers
 			return BLComment.Instance().GetAll();
 		}
 		[HttpGet]
+		public DataListMessage<Comment> GetAllByTasksId(int tasksId)
+		{
+			return BLComment.Instance().GetAllByTasksId(tasksId);
+		}
+		[HttpGet]
 		public DataMessage<Comment> GetById(int Id)
 		{
 			return BLComment.Instance().GetById(Id);
@@ -28,7 +33,7 @@ namespace TaskManagementAPI.Controllers
 		public ActionResult<stringMessage> Delete(int id)
 		{
 			TaskManagementDbContext context = new TaskManagementDbContext();
-			return BLComment.Instance().Delete(new Comment { Id = id });
+			return BLComment.Instance().Delete(new Comment { CommentId = id });
 		}
 		[HttpPost]
 

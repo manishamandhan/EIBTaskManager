@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -9,17 +10,26 @@ namespace TaskManagementModel.Models
 {
 	public class Comment
 	{
-		public int Id { get; set; }
-		public string created_by { get; set; }
-		public string updated_by { get; set; }
-		public bool is_deleted { get; set; }
-		public DateTime created_at { get; set; }
-		public DateTime updated_at { get; set; }
+		[Key]
+		public int CommentId { get; set; }
+		public int CreatedBy { get; set; }
+		[ForeignKey("CreatedBy")]
+		//[JsonIgnore]
+		public virtual User? CreatedByUser { get; set; }
+		public int ModifiedBy { get; set; }
+		[ForeignKey("ModifiedBy")]
+		//[JsonIgnore]
+
+		public virtual User? ModifiedByUser { get; set; }
+		public bool IsDeleted { get; set; }
+		public DateTime DateCreated { get; set; }
+		public DateTime DateModified { get; set; }
 		public string values { get; set; }
-		public int userid { get; set; }
 
+		public int TasksId { get; set; }
+		[ForeignKey("TasksId")]
+		//[JsonIgnore]
 
-		[ForeignKey("userid")]
-		public User Users { get; set; }
+		public virtual Tasks? Task { get; set; }
 	}
 }

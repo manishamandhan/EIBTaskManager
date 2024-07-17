@@ -6,24 +6,7 @@ interface Iprops {
   fetchData: () => void
 }
 export const Dsrpagedatadetaillist: React.FC<Iprops> = ({ DsrCL }) => {
-  const intialdsrdata: Dsrmodel = {
-    dsrDetailsId: 0,
-    ticket_Link: "",
-    ticket_Description: "",
-    time_Started: new Date(),
-    estimated_Time: 0,
-    time_Completed: new Date(),
-    status: "",
-    notes: "",
-    createdBy: 0,
-    modifiedBy: 0,
-    dateCreated: "",
-    dateModified: "",
-    isDeleted: false,
-  }
-  const [open, setOpen] = React.useState(false);
-
-  const [formdata, setFormdata] = React.useState(intialdsrdata)
+ 
 
   const columns: GridColDef[] = [
 

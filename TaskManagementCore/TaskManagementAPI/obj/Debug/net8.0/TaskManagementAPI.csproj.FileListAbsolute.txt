@@ -140,6 +140,8 @@ D:\Manisha\TaskManagement\TaskManagementCore\TaskManagementAPI\bin\Debug\net8.0\
 D:\Manisha\TaskManagement\TaskManagementCore\TaskManagementAPI\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Manisha\TaskManagement\TaskManagementCore\TaskManagementAPI\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\obj\Debug\net8.0\TaskManagementAPI.csproj.AssemblyReference.cache
+D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\obj\Debug\net8.0\TaskManagementAPI.Westwind.Properties.Resources.resources
+D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\obj\Debug\net8.0\TaskManagementAPI.csproj.GenerateResource.cache
 D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\obj\Debug\net8.0\TaskManagementAPI.GeneratedMSBuildEditorConfig.editorconfig
 D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\obj\Debug\net8.0\TaskManagementAPI.AssemblyInfoInputs.cache
 D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\obj\Debug\net8.0\TaskManagementAPI.AssemblyInfo.cs
@@ -147,9 +149,6 @@ D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\obj\Debug\net8.0\
 D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\obj\Debug\net8.0\TaskManagementAPI.MvcApplicationPartsAssemblyInfo.cs
 D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\obj\Debug\net8.0\TaskManagementAPI.MvcApplicationPartsAssemblyInfo.cache
 D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\obj\Debug\net8.0\TaskManagementAPI.sourcelink.json
-D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\obj\Debug\net8.0\TaskManagementAPI.dll
-D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\obj\Debug\net8.0\refint\TaskManagementAPI.dll
-D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\obj\Debug\net8.0\TaskManagementAPI.pdb
 D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\bin\Debug\net8.0\appsettings.Development.json
 D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\bin\Debug\net8.0\appsettings.json
 D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\bin\Debug\net8.0\TaskManagementAPI.exe
@@ -160,6 +159,9 @@ D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\bin\Debug\net8.0\
 D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\bin\Debug\net8.0\Azure.Core.dll
 D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\bin\Debug\net8.0\Azure.Identity.dll
 D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\bin\Debug\net8.0\Humanizer.dll
+D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
 D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -184,6 +186,8 @@ D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\bin\Debug\net8.0\
 D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\bin\Debug\net8.0\Mono.TextTemplating.dll
+D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
 D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -278,5 +282,9 @@ D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\obj\Debug\net8.0\
 D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\obj\Debug\net8.0\staticwebassets.pack.json
 D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\obj\Debug\net8.0\scopedcss\bundle\TaskManagementAPI.styles.css
 D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\obj\Debug\net8.0\TaskMana.0D8D9FF3.Up2Date
+D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\obj\Debug\net8.0\TaskManagementAPI.dll
+D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\obj\Debug\net8.0\refint\TaskManagementAPI.dll
+D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\obj\Debug\net8.0\TaskManagementAPI.pdb
 D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\obj\Debug\net8.0\TaskManagementAPI.genruntimeconfig.cache
 D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\obj\Debug\net8.0\ref\TaskManagementAPI.dll
+D:\Manisha\EIBTaskManager\TaskManagementCore\TaskManagementAPI\bin\Debug\net8.0\BCrypt.Net-Core.dll

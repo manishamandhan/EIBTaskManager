@@ -1,5 +1,7 @@
-﻿using TaskManagementCore.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using TaskManagementCore.Data;
 using TaskManagementModel.Models;
+using TaskManagementModel.Models.StoredProcedureModels;
 using static TaskManagementBuisnessLogic.BLCommon;
 
 namespace TaskManagementBuisnessLogic
@@ -29,7 +31,7 @@ namespace TaskManagementBuisnessLogic
 			{
 				using(TaskManagementDbContext _context = new TaskManagementDbContext())
 				{
-					var usermodel = _context.User.ToList();
+					var usermodel = _context.User.Include(d => d.Department).ToList();
 					if(usermodel != null)
 					{
 						return new DataListMessage<User>(ResponseType.Success, usermodel, "Model Found");
@@ -52,7 +54,8 @@ namespace TaskManagementBuisnessLogic
 			{
 				using (TaskManagementDbContext _context = new TaskManagementDbContext())
 				{
-					var userid = _context.User.Where(p => p.UserId == userId).FirstOrDefault();
+					//var userid = _context.User.Where(p => p.UserId == userId).FirstOrDefault();
+					var userid = _context.User.Include(d => d.Department).Where(p => p.UserId == userId).FirstOrDefault();
 					if (userid != null)
 					{
 						return new DataMessage<User>(ResponseType.Success, userid, "Id Details Found");
@@ -117,7 +120,7 @@ namespace TaskManagementBuisnessLogic
 						updateduser.Password = newuser.Password;
 						updateduser.PhoneNo1 = newuser.PhoneNo1;
 						updateduser.PhoneNo2 = newuser.PhoneNo2;
-						updateduser.DeptId = newuser.DeptId;
+						updateduser.DepartmentID = newuser.DepartmentID;
 						updateduser.CorrespondingAddress = newuser.CorrespondingAddress;
 						updateduser.DateOfBirth = newuser.DateOfBirth;
 						updateduser.Designation = newuser.Designation;
@@ -167,7 +170,7 @@ namespace TaskManagementBuisnessLogic
 						SavedData.Password = newuser.Password;
 						SavedData.PhoneNo1 = newuser.PhoneNo1;
 						SavedData.PhoneNo2 = newuser.PhoneNo2;
-						SavedData.DeptId = newuser.DeptId;
+						SavedData.DepartmentID = newuser.DepartmentID;
 						SavedData.CorrespondingAddress = newuser.CorrespondingAddress;
 						SavedData.DateOfBirth = newuser.DateOfBirth;
 						SavedData.Designation = newuser.Designation;
@@ -177,7 +180,7 @@ namespace TaskManagementBuisnessLogic
 						SavedData.ModifiedBy = newuser.ModifiedBy;
 						SavedData.DateCreated = newuser.DateCreated;
 						SavedData.DateModified = newuser.DateModified;
-						_context.User.Add(newuser);
+						_context.User.Add(SavedData);
 
 						if (_context.SaveChanges() > 0)
 						{
@@ -202,6 +205,100 @@ namespace TaskManagementBuisnessLogic
 
 
 		}
+		public DataMessage<getUserdetailByUserId> Authenticate(string UserName, string password)
+		{
+
+			// var User = _context.Users.Where(p => p.Username == UserName && p.Userpassword == password).FirstOrDefault();
+			try
+			{
+				using (TaskManagementDbContext _context = new TaskManagementDbContext())
+				{
+					var User = _context.User.Where(p => (p.FirstName == UserName || p.Email == UserName) && p.IsDeleted == false).FirstOrDefault();
+					// var User = _context.GetUserRoles(UserName, password).FirstOrDefault();
+
+					//if (User != null && BCrypt.Net.BCrypt.Verify(password, User.Password))
+					if (User != null && password.Equals(User.Password))
+					{
+
+						var userDetails = GetUserDetails(User.UserId);
+						if (userDetails.Resp == ResponseType.Success)
+						{
+							return new DataMessage<getUserdetailByUserId>(ResponseType.Success, userDetails.Data, "User Found");
+						}
+						return new DataMessage<getUserdetailByUserId>(ResponseType.Failed, null, "no user found");
+
+
+					}
+					else
+					{
+
+						return new DataMessage<getUserdetailByUserId>(ResponseType.Failed, null, "no user found");
+
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				return new DataMessage<getUserdetailByUserId>(ResponseType.Failed, null, ex.StackTrace);
+			}
+
+		}
+		public DataMessage<getUserdetailByUserId> GetUserDetails(int userid)
+		{
+
+			try
+			{
+
+				using (TaskManagementDbContext _context = new TaskManagementDbContext())
+				{
+
+
+					var userRoles = _context.getUserdetailByUserId.FromSqlRaw("Exec getUserdetailByUserId {0}", userid).ToList().FirstOrDefault();
+
+					if (userRoles != null)
+					{
+						return new DataMessage<getUserdetailByUserId>(ResponseType.Success, userRoles, "Users Found");
+
+					}
+
+					return new DataMessage<getUserdetailByUserId>(ResponseType.Exception, null, "No Data Found");
+
+				}
+			}
+			catch (Exception ex)
+			{
+				return new DataMessage<getUserdetailByUserId>(ResponseType.Exception, null, ex.StackTrace);
+
+			}
+
+		}
+		//public DataMessage<User> getByAPIToken(string APIToken)
+		//{
+		//	try
+		//	{
+		//		using (TaskManagementDbContext _context = new TaskManagementDbContext())
+		//		{
+		//			var partnerinformation = _context.User.Where(p => p.APIToken.ToString() == APIToken).FirstOrDefault();
+
+		//			if (partnerinformation != null)
+		//			{
+		//				return new DataMessage<User>(ResponseType.Success, partnerinformation, "Data Found");
+
+		//			}
+		//			else
+		//			{
+
+		//				return new DataMessage<User>(ResponseType.Exception, null, "No Data found");
+
+		//			}
+		//		}
+		//	}
+		//	catch (Exception ex)
+		//	{
+		//		return new DataMessage<User>(ResponseType.Exception, null, ex.Message.ToString());
+
+		//	}
+		//}
 	}
 	
 
